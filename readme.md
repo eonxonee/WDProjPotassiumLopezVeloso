@@ -1,17 +1,13 @@
-A working website Title. The title should be short, catchy and would encapsulate what the website is about.  This title will be used on the website browser tab.
+## Title: Kallergis Conundrum
+## Subtitle: The Murder Mystery Begins
 
-A second title could be used to emphasize the importance of the website.
+## Description: 
+Welcome to Aretta’s Laptop. In this murder mystery-style RPG, you play as Cain Parricid, a detective whose career depends entirely on one case. Aretta Kallergis, 21 years old, has mysteriously died of natural causes. However, is that really all there is to her story? That is for you to find out.
 
-A logo for your website should also be designed. To be used in every page of the website and on the web browser tab (the favicon/icon)
+On this journey, you encounter various friends and foes that aid you in uncovering the truth. You may even discover secrets about yourself that you did not know…
 
-A short but comprehensive description of the website using only one or two paragraphs.  This will be used as part of the homepage content of your website.
+## How JS will be Used on Homepage: 
+As seen in the layout, it mimics a laptop with apps and documents the player can open. Included is a button that opens a guessing game for who the murderer is and ends the game once the player guesses it right. Embedded in the footer is the player’s notes app where all the important information regarding the case will be stored and available to access anytime. Javascript will also be used for the miscellaneous apps shown on the screen (the fake “documents” and “images”).
 
-An outline of the website of at least 5 web pages.  Each outline should have a subtitle (Example: Home, Players, About Us, etc) The website should have a clear home page.  The outline should be descriptive and refrain from using Page 1, Page 2 or Link 1, Link 2.  The outline will be translated as the webpages of your website.
 
-A description on how JS will be incorporated in your website or on one of the webpages.  It must clearly state where it will be used or found on the website.
-
-An initial wireframe or mock-up for all the proposed webpages, showing clearly the layout, position of contents (text, images and media files), and the navigation between web pages.  The wireframe should also clearly show actual web pages’ titles and the section headers.  
-
-Navigation design should allow users to switch between pages with ease from any of the pages.
-
-Lastly, include a footer in your wireframe for copyright notices, source citations and Social Media Links using well known image sprites
+## Outline/Wireframe with Logo Link: https://www.canva.com/design/DAG3KVnLVYY/T15bPD2_kiuGvoqs9C1Ubw/edit
