@@ -2,7 +2,7 @@
 ## Subtitle: The Murder Mystery Begins
 
 ## Description: 
-Welcome to Aretta’s Laptop. In this murder mystery-style RPG, you play as Cain Parricid, a detective whose career depends entirely on one case. Aretta Kallergis, 21 years old, has mysteriously died of natural causes. However, is that really all there is to her story? That is for you to find out.
+Welcome to Aretta’s Laptop. In this murder mystery-style RPG, you play as Cain Fratricida, a detective whose career depends entirely on one case. Aretta Kallergis, 21 years old, has mysteriously died of natural causes. However, is that really all there is to her story? That is for you to find out.
 
 On this journey, you encounter various friends and foes that aid you in uncovering the truth. You may even discover secrets about yourself that you did not know…
 
