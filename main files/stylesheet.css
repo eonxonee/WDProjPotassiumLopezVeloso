@@ -48,15 +48,15 @@ footer{
     border-top: 10px solid black;
 }
 #guess{
-    width:33%;
+    width:33.1%;
     display:inline-block;
 }
 .webDetails{
-    width:33%;
+    width:33.1%;
     display:inline-block;
     text-align:center;
 }
 #notes{
-    width:33%;
+    width:33.1%;
     display:inline-block;
 }
