@@ -18,6 +18,7 @@ h4{
     aspect-ratio:1/1;
     position:absolute;
     left: 10vw;
+    top:17vh;
 }
 #mockEmail{
     width:6vw;
@@ -44,36 +45,36 @@ h4{
     width:6vw;
     aspect-ratio:1/1;
     position:absolute;
-    top:49vh;
+    top:53vh;
     left:18.5vw;
 }
 #wordGuessGame{
     width:6vw;
     aspect-ratio:1/1;
     position:absolute;
-    top:66vh;
+    top:72.5vh;
     left:18.5vw;
 }
 #arettaPicture{
     width:6vw;
     aspect-ratio:1/1;
     position:absolute;
-    top:66vh;
+    top:72.5vh;
     left:2vw;
 }
 #arettasSchedule{
     width:6vw;
     aspect-ratio:1/1;
     position:absolute;
-    top:66vh;
-    right:1.5vw;
+    top:72.5vh;
+    right:2vw;
 }
 #mockSetting{
     width:6vw;
     aspect-ratio:1/1;
     position:absolute;
-    top:52vh;
-    right:8vw;
+    top:59vh;
+    right:9vw;
 }
 footer{
     position:absolute;
