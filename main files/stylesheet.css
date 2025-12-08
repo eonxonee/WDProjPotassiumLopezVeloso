@@ -3,3 +3,45 @@ body{
     width: 100%;
     height:100%;
 }
+h4{
+    line-height: 0.1em;
+    text-align: right;
+}
+/*Apps*/
+
+#arettaChildhoodPhoto{
+    width: 10%;
+    aspect-ratio: 1/1;
+}
+#mockEmail{
+    width: 10%;
+    aspect-ratio: 1/1;
+}
+#mockFiles{
+    width: 10%;
+    aspect-ratio: 1/1;
+}
+#mockContacts{
+    width: 10%;
+    aspect-ratio: 1/1;
+}
+#guessTheNumber{
+    width: 10%;
+    aspect-ratio: 1/1;
+}
+#wordGuessGame{
+    width: 10%;
+    aspect-ratio: 1/1;
+}
+#arettaPicture{
+    width: 10%;
+    aspect-ratio: 1/1;
+}
+#arettasSchedule{
+    width: 10%;
+    aspect-ratio: 1/1;
+}
+#mockSetting{
+    width: 10%;
+    aspect-ratio: 1/1;
+}
