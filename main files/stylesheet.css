@@ -1,5 +1,4 @@
 html{
-    border-radius: 5%;
     height:100%;
     width:100%;
     border: 10px solid black;
@@ -8,23 +7,35 @@ h4{
     text-align:right;
     line-height:1px;
 }
-
+#arettaChildhoodPhoto{
+    aspect-ratio:1/1;
+}
+/*footer*/
 footer{
     position: absolute;
+    padding:0px;
+    margin:0px;
     bottom:0rem;
-    width:100%;
+    left:0px;
+    width:101%;
     border-top: 10px solid black;
 }
 #guess{
-    display:inline-block;
-    width: 33.1%;
-    margin-left:0px;
+    position:absolute;
+    height:14.9vh;
+    left:0.5vw;
+    top:0vh;
+    width:33.33%;
+    border-radius:0px;
 }
 .webDetails{
-    display:inline-block;
-    width: 33.1%;
+    text-align:center;
 }
 #notes{
-    display:inline-block;
-    width: 32.2%;
+    position:absolute;
+    height:14.9vh;
+    right:0.2vw;
+    top:0vh;
+    width:33.33%;
+    border-radius:0px;
 }
