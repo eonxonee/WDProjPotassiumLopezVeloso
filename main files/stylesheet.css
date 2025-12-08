@@ -1,62 +1,30 @@
-body{
+html{
+    border-radius: 5%;
+    height:100%;
+    width:100%;
     border: 10px solid black;
 }
 h4{
-    line-height: 0.1em;
-    text-align: right;
+    text-align:right;
+    line-height:1px;
 }
-/*Apps*/
 
-#arettaChildhoodPhoto{
-    width: 10%;
-    aspect-ratio: 1/1;
-}
-#mockEmail{
-    width: 10%;
-    aspect-ratio: 1/1;
-}
-#mockFiles{
-    width: 10%;
-    aspect-ratio: 1/1;
-}
-#mockContacts{
-    width: 10%;
-    aspect-ratio: 1/1;
-}
-#guessTheNumber{
-    width: 10%;
-    aspect-ratio: 1/1;
-}
-#wordGuessGame{
-    width: 10%;
-    aspect-ratio: 1/1;
-}
-#arettaPicture{
-    width: 10%;
-    aspect-ratio: 1/1;
-}
-#arettasSchedule{
-    width: 10%;
-    aspect-ratio: 1/1;
-}
-#mockSetting{
-    width: 10%;
-    aspect-ratio: 1/1;
-}
-/*footer*/
 footer{
+    position: absolute;
+    bottom:0rem;
+    width:100%;
     border-top: 10px solid black;
 }
 #guess{
-    width:33.1%;
     display:inline-block;
+    width: 33.1%;
+    margin-left:0px;
 }
 .webDetails{
-    width:33.1%;
     display:inline-block;
-    text-align:center;
+    width: 33.1%;
 }
 #notes{
-    width:33.1%;
     display:inline-block;
+    width: 32.2%;
 }
