@@ -1,7 +1,5 @@
 body{
     border: 10px solid black;
-    width: 100%;
-    height:100%;
 }
 h4{
     line-height: 0.1em;
@@ -44,4 +42,21 @@ h4{
 #mockSetting{
     width: 10%;
     aspect-ratio: 1/1;
+}
+/*footer*/
+footer{
+    border-top: 10px solid black;
+}
+#guess{
+    width:33%;
+    display:inline-block;
+}
+.webDetails{
+    width:33%;
+    display:inline-block;
+    text-align:center;
+}
+#notes{
+    width:33%;
+    display:inline-block;
 }
