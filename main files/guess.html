@@ -1,7 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>    
-    <link rel="stylesheet" href="guess.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    <style> 
+        @font-face{
+        font-family: "amore";
+        src: url("../assets/Amore Christmas.otf");
+    }
+
+    body {
+        font-style: italic;
+        color: #fffabb96;
+        background-color: white;
+        background-image: url('guessbg.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    h1 {
+        text-align: center;
+        font-size: xx-large;
+        font-family: amore;
+        font-style: italic;
+        margin-top: 40px;
+    }
+    #gameContainer {
+        background: rgb(69, 15, 97);
+        border-radius: 20px;
+        padding: 30px;
+        max-width: 400px;
+        margin: 60px auto;
+        box-shadow: 0 4px 16px blue;
+        text-align: center;
+    }
+    button {
+        background-color: #fff6b6;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+    #wordDisplay {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        letter-spacing: 0.2em;
+    }
+    #message {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+    input[type="text"] {
+        font-size: 1.2rem;
+        padding: 8px;
+        width: 40px;
+        text-align: center;
+        border-radius: 5px;
+        border: 1px solid #10429f;
+        margin-right: 10px;
+    }
+    </style>
 </head>
 
 <body>
@@ -12,6 +78,78 @@
     <button onclick="makeGuess()" id="guessBtn">Guess</button>
     <p id="message"></p>
 </div>
-<script src="main.js"></script>
+
+<script>
+    var secretWord = ["k", "a", "l", "l", "e", "r", "g", "i", "s"];
+var guessedWord = [];
+var attemptsLeft = 5;
+
+for (var i = 0; i < secretWord.length; i++) {
+    guessedWord.push("_");
+}
+
+function showWord() {
+    document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+}
+
+showWord();
+
+function makeGuess() {
+    var input = document.getElementById("guessInput");
+    var guess = input.value.toLowerCase();
+    var correct = false;
+    var alreadyGuessed = false;
+
+    if (guess.length !== 1 || guess < "a" || guess > "z") {
+        document.getElementById("message").textContent = "Please enter a single letter.";
+        input.value = "";
+        return;
+    }
+
+    for (var i = 0; i < secretWord.length; i++) {
+        if (guessedWord[i] === guess) {
+            alreadyGuessed = true;
+            break;
+        }
+    }
+
+    if (alreadyGuessed) {
+        document.getElementById("message").textContent = "You already revealed this letter!";
+        input.value = "";
+        return;
+    }
+
+    for (var i = 0; i < secretWord.length; i++) {
+        if (secretWord[i] === guess && guessedWord[i] === "_") {
+            guessedWord[i] = guess;
+            correct = true;
+        }
+    }
+
+    if (!correct) {
+        attemptsLeft--;
+        document.getElementById("message").textContent = "Incorrect! Attempts left: " + attemptsLeft;
+    } else {
+        document.getElementById("message").textContent = "Correct guess!";
+    }
+
+    showWord();
+
+    if (attemptsLeft <= 0) {
+        document.getElementById("message").textContent = "Game over! You've run out of attempts.";
+        input.disabled = true;
+        document.getElementById("guessBtn").disabled = true;
+    }
+
+    if (guessedWord.indexOf("_") === -1) {
+        document.getElementById("message").textContent = "Congratulations! You've guessed the word!";
+        input.disabled = true;
+        document.getElementById("guessBtn").disabled = true;
+    }
+
+    input.value = "";
+    input.focus();
+}
+</script>
 </body>
 </html>
