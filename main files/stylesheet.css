@@ -12,35 +12,49 @@ html{
 }
 body{
     margin:0;
-    height:100vh;
+    height:95vh;
     border:10px,solid,black;
+}
+header{
+    background-color:pink;
+    margin:1vw;
+}
+.app{
+    width:6vw;
+    aspect-ratio:1/1;
 }
 footer{
     display:flex;
-    margin-bottom:0px;
     background-color:aqua;
 }
 #guess{
     display:inline-block;
+    width:33.33vw;
+}
+.webDetails{
+    display:flex;
 }
 #logo{
     width:6vw;
+    float:left;
+}
+#title{
+    display:inline-block;
+    width:27.33vw;
 }
 #openNotes{
-    display:flex;
+    display:inline-block;
+    width:33.33vw;
+    border-radius:0px;
 }
 
 .notes{
-    position:fixed;
     font-family: 'fileFont', 'Courier New', monospace;
     background-color:black;
-    width: 35vw;
-    height:90vh;
     opacity:0.8;
     border-radius:20px;
     color:white;
     margin-left: 45vw;
-    margin-top:0vh;
     pointer-events:none;
     opacity:0;
     
