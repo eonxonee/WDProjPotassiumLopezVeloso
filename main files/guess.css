@@ -1,3 +1,8 @@
+@font-face{
+    font-family: "amore";
+    src: url("../assets/Amore Christmas.otf");
+}
+
 body {
     font-style: italic;
     color: #fffabb96;
@@ -10,7 +15,7 @@ body {
 h1 {
     text-align: center;
     font-size: xx-large;
-    font-family: monospace;
+    font-family: amore;
     font-style: italic;
     margin-top: 40px;
 }
