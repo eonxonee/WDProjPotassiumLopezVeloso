@@ -10,14 +10,24 @@
 html{
     border:10px,solid,black;
 }
+body{
+    margin:0;
+    height:100vh;
+    border:10px,solid,black;
+}
 footer{
     display:flex;
+    margin-bottom:0px;
+    background-color:aqua;
 }
 #guess{
     display:inline-block;
 }
 #logo{
     width:6vw;
+}
+#openNotes{
+    display:flex;
 }
 
 .notes{
