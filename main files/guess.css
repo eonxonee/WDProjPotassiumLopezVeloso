@@ -1,8 +1,8 @@
 body {
     font-style: italic;
-    color: #ff004c96;
+    color: #fffabb96;
     background-color: white;
-    background-image: url('https://cdn.wallpapersafari.com/18/76/YSsUpP.png');
+    background-image: url('guessbg.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -15,7 +15,7 @@ h1 {
     margin-top: 40px;
 }
 #gameContainer {
-    background: aqua;
+    background: rgb(69, 15, 97);
     border-radius: 20px;
     padding: 30px;
     max-width: 400px;
@@ -24,7 +24,7 @@ h1 {
     text-align: center;
 }
 button {
-    background-color: #ffb6c1;
+    background-color: #fff6b6;
     color: white;
     border: none;
     padding: 15px 30px;
@@ -52,6 +52,6 @@ input[type="text"] {
     width: 40px;
     text-align: center;
     border-radius: 5px;
-    border: 1px solid #ffb6c1;
+    border: 1px solid #10429f;
     margin-right: 10px;
 }
