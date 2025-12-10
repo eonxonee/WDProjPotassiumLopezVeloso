@@ -7,16 +7,20 @@
     minutes=addZero(minutes);
     document.getElementById("time").innerHTML = hours +":"+ minutes +":"+ seconds;
     setTimeout(clock,1000);
-    return hours;
 }
 function addZero(i){
     if(i<10){i="0"+i}
     return i;
 }
-function dayYear(){
-    const currentDate =new Date();
-    var month=currentDate.getMonth()+1;
-    var day=currentDate.getDate();
-    var year=currentDate.getFullYear()-6;
-    document.getElementById("date").innerHTML = month+"/"+day+"/"+year;
+function day(){
+    document.getElementById("day").innerHTML= "1";
+    document.getElementById("date").innerHTML= "18";
+}
+
+const notes_open=document.getElementById("openNotes");
+const notes_modal=document.getElementById("notes");
+
+notes_open.addEventListener("click",open);
+function open(){
+    notes_modal.classList.add("open");
 }

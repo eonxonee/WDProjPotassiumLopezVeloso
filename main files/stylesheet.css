@@ -1,3 +1,7 @@
+@font-face{
+    font-family: "fileFont";
+    src: url("../assets/STAMPWRITER-KIT\ 2.ttf");
+}
 .satisfy-regular {
   font-family: "Satisfy", cursive;
   font-weight: 400;
@@ -7,17 +11,23 @@ html{
     border: 10px solid black;
     height:97.2vh;
 }
+body{
+    background-image: url('../assets/')
+}
+.header{
+    position:absolute;
+    z-index:-999;
+}
 h1{
     font-family: "Satisfy", cursive;
     font-size:3rem;
     margin-left:0.5vw;
-    margin-top:0vh;
-    
+    margin-top:0vh;  
 }
 h4{
     text-align:right;
     margin-top:-13vh;
-    margin-right:0.5vw;
+    margin-right:-77vw;
     font-size: 1.2rem;
     font-family:'Courier New', Courier, monospace;
 }
@@ -112,12 +122,9 @@ button{
     width:6vw;
     aspect-ratio:64/85;
     position:absolute;
-    top:69vh;
+    top: 60vh;
     left:2vw;
     background-size:cover;
-}
-#portraitIcon{
-    width:6vw;
 }
 #arettaPicture:hover{
     transform:translateY(-10px);
@@ -178,32 +185,54 @@ hr{
     bottom:10.5vh;
 }
 #guess{
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'fileFont', 'Courier New', monospace;
+    font-size:1.5rem;
     position:absolute;
-    height:10.5vh;
+    height:10.3vh;
     width:33.33vw;
     left:0.5vw;
-    top:-1.2vh;
+    top:-1.1vh;
     margin-left:-1.1vw;
 }
 .webDetails{
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'fileFont', 'Courier New', monospace;
     height:5vh;
     text-align:center;
     line-height:0px;
     padding-bottom:3vh;
     padding-left:4vw;
 }
-#notes{
-    font-family:'Courier New', Courier, monospace;
+#openNotes{
+    font-family: 'fileFont', 'Courier New', monospace;
     position:absolute;
-    height:10.5vh;
+    height:10.3vh;
     right:0.2vw;
     width:33.33vw;
-    top:-1.2vh;
+    top:-1.1vh;
     margin-right:-2.3vw;
+    font-size: 2rem;
 }
-
-
-
-
+.notes{
+    position:fixed;
+    font-family: 'fileFont', 'Courier New', monospace;
+    background-color:black;
+    width: 35vw;
+    height:90vh;
+    opacity:0.8;
+    border-radius:20px;
+    color:white;
+    margin-left: 45vw;
+    margin-top:0vh;
+    pointer-events:none;
+    opacity:0;
+    
+}
+.notes.open{
+    opacity:1;
+    z-index:999;
+}
+#notesTitle{
+    font-size: 3rem;
+    position:relative;
+    margin-left: 3vw;
+}
