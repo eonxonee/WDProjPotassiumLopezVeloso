@@ -50,8 +50,8 @@ button{
 
 #arettaChildhoodPhoto{
     position:relative;
-    left: 10.5vw;
-    top: -5vh;
+    top:12vh;
+    left:-10vw;
     margin:0px;
     padding:0px;
     aspect-ratio: 3/2;
@@ -70,9 +70,9 @@ button{
 }
 #mockFiles{
     position:relative;
-    left:-7.5vw;
-    top: 9vh;
     background-color:inherit;
+    top:25vh;
+    left:-28vw;
     margin:0px;
     padding:0px;
     border:none;
@@ -88,8 +88,8 @@ button{
 }
 #mockEmail{
     position:relative;
-    left: 5vw;
-    top: 9vh;
+    top:25vh;
+    left:-15vw;
     margin:0px;
     padding:0px;
     border:none;
@@ -106,8 +106,6 @@ button{
 }
 #arettasSchedule{
     position:relative;
-    left: -20.5vw;
-    top: 27vh;
     margin:0px;
     padding:0px;
     border:none;
@@ -124,8 +122,8 @@ button{
 }
 #mockContacts{
     position:relative;
-    left:-18.5vw;
-    top: 26.5vh;
+    top:40vh;
+    left:-29.1vw;
     margin:0px;
     padding:0px;
     border:none;
@@ -142,8 +140,6 @@ button{
 }
 #guessTheNumber{
     position:relative;
-    left:-15.4vw;
-    top: 26.5vh;
     margin:0px;
     padding:0px;
     border:none;
@@ -160,8 +156,6 @@ button{
 }
 #wordGuessGame{
     position:relative;
-    left:-40.5vw;
-    top: 45vh;
     margin:0px;
     padding:0px;
     border:none;
@@ -172,6 +166,10 @@ button{
 #wordGuessGame img{
     width:5.5vw;
     aspect-ratio:1/1;
+}
+#wordGuessGame a{
+    text-decoration:none;
+    color:black;
 }
 
 /*footer*/
@@ -257,7 +255,9 @@ footer{
     margin-left: 45vw;
     pointer-events:none;
     opacity:0;
-    
+    width: 35vw;
+    height:80vh;
+    position:fixed;
 }
 .notes.open{
     opacity:1;
