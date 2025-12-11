@@ -137,7 +137,6 @@
             return;
         }
 
-        // wrong guess
         attemptsLeft--;
         message.textContent = val < secret ? "Too low — guess higher!" : "Too high — guess lower!";
         attemptsDisplay.textContent = `Attempts left: ${attemptsLeft} / ${maxAttempts}`;
