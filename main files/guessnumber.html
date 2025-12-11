@@ -12,21 +12,20 @@
 
     body {
         font-style: italic;
-        color: #fff6b6;
+        color: #fff6b6; /* fixed text color (was invalid) */
         background-image: url("../assets/guessbg.jpeg");
         background-size: cover;
         background-repeat: no-repeat;
-        font-size: x-large;
         background-attachment: fixed;
     }
     h1 {
-        color: #fff6b6;
+        color: #fff6b6; /* fixed header color */
         text-align: center;
         font-size: xx-large;
         font-family: amore;
         font-style: italic;
         margin-top: 40px;
-        text-shadow: 0 4px 10px rgba(255, 238, 88, 0.95);
+        text-shadow: 0 4px 10px rgba(255, 238, 88, 0.95); /* yellow header shadow/glow */
     }
     #gameContainer {
         background: rgb(69, 15, 97);
@@ -52,22 +51,29 @@
         cursor: not-allowed;
     }
     #wordDisplay {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-        letter-spacing: 0.2em;
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+        letter-spacing: 0.02em;
     }
     #message {
-        margin-top: 20px;
+        margin-top: 12px;
         font-weight: bold;
+    }
+    #attemptsDisplay {
+        margin-top: 8px;
+        font-size: 0.95rem;
+        color: #fff6b6;
     }
     input[type="text"] {
         font-size: 1.2rem;
         padding: 8px;
-        width: 40px;
+        width: 80px;
         text-align: center;
         border-radius: 5px;
         border: 1px solid #10429f;
         margin-right: 10px;
+        background: white;
+        color: black;
     }
     </style>
 </head>
@@ -78,48 +84,87 @@
         <input type="text" id="guessInput" maxlength="3" />
         <button id="guessButton">Guess</button>
         <p id="message"></p>
+        <p id="attemptsDisplay"></p>
     </div>
 
 <script>
-function guessNumber(secretNumber, guess) {
-    if (guess === secretNumber) return "Correct! You guessed it!";
-    if (guess < secretNumber) return "Too low, guess higher!";
-    return "Too high, guess lower!";
-}
+(function () {
+    const secret = Math.floor(Math.random() * 100) + 1;
+    const maxAttempts = 10;
+    let attemptsLeft = maxAttempts;
 
-function playGame(secretNumber, maxAttempts = 10) {
-    let attempts = 0;
-    let guessed = false;
+    const display = document.getElementById("wordDisplay");
+    const input = document.getElementById("guessInput");
+    const btn = document.getElementById("guessButton");
+    const message = document.getElementById("message");
+    const attemptsDisplay = document.getElementById("attemptsDisplay");
 
-    while (attempts < maxAttempts && !guessed) {
-        const input = prompt(`Guess a number between 1 and 100 (Attempt ${attempts + 1}/${maxAttempts}):`);
-        if (input === null) {
-            console.log("Game cancelled.");
-            return;
-        }
-
-        const playerGuess = Number(input);
-        if (Number.isNaN(playerGuess)) {
-            console.log("Please enter a valid number.");
-            continue;
-        }
-
-        attempts++;
-        const result = guessNumber(secretNumber, playerGuess);
-        console.log(result);
-
-        if (playerGuess === secretNumber) {
-            guessed = true;
-            console.log(`You won in ${attempts} attempt${attempts > 1 ? "s" : ""}!`);
-            return;
-        }
+    function updateUI() {
+        display.textContent = "Guess a number between 1 and 100";
+        attemptsDisplay.textContent = `Attempts left: ${attemptsLeft} / ${maxAttempts}`;
     }
 
-    if (!guessed) console.log(`Game over! The number was ${secretNumber}.`);
-}
+    function endGame(finalMsg) {
+        message.textContent = finalMsg;
+        input.disabled = true;
+        btn.disabled = true;
+    }
 
-const secret = Math.floor(Math.random() * 100) + 1;
-playGame(secret);
+    function handleGuess() {
+        const raw = input.value.trim();
+        if (raw === "") {
+            message.textContent = "Please enter a number.";
+            return;
+        }
+
+        const val = Number(raw);
+        if (!Number.isFinite(val) || Number.isNaN(val)) {
+            message.textContent = "Please enter a valid number.";
+            input.value = "";
+            input.focus();
+            return;
+        }
+
+        if (val < 1 || val > 100) {
+            message.textContent = "Enter a number between 1 and 100.";
+            input.value = "";
+            input.focus();
+            return;
+        }
+
+        if (val === secret) {
+            endGame(`Correct! The number was ${secret}. You won!`);
+            return;
+        }
+
+        // incorrect guess
+        attemptsLeft--;
+        if (val < secret) {
+            message.textContent = "Too low — guess higher!";
+        } else {
+            message.textContent = "Too high — guess lower!";
+        }
+
+        attemptsDisplay.textContent = `Attempts left: ${attemptsLeft} / ${maxAttempts}`;
+
+        if (attemptsLeft <= 0) {
+            endGame(`Game over! The number was ${secret}.`);
+            return;
+        }
+
+        input.value = "";
+        input.focus();
+    }
+
+    btn.addEventListener("click", handleGuess);
+    input.addEventListener("keyup", function (e) {
+        if (e.key === "Enter") handleGuess();
+    });
+
+    // initialize
+    updateUI();
+    input.focus();
+})();
 </script>
 </body>
 </html>
