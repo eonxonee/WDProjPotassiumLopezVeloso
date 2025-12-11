@@ -1,3 +1,5 @@
+/*fonts*/
+
 @font-face{
     font-family: "fileFont";
     src: url("../assets/STAMPWRITER-KIT\ 2.ttf");
@@ -7,50 +9,248 @@
   font-weight: 400;
   font-style: normal;
 }
-html{
-    border:10px,solid,black;
-}
+
+/*main*/
+
 body{
     margin:0;
-    height:95vh;
-    border:10px,solid,black;
+    background-size:cover;
 }
+.container{
+    background-image: url('../assets/laptopbg.png');
+    background-size:cover;
+    border:20px,solid,#89476c;
+    border-bottom:none;
+    position:relative;
+    min-height:calc(100vh - 17.6vh);
+}
+
+/*header*/
+
 header{
-    background-color:pink;
     margin:1vw;
 }
-.app{
-    width:6vw;
+header h1{
+    float:left;
+    font-family:"Satisfy", cursive;
+    font-size:3rem;
+    margin-top:0vh;
+}
+header h4{
+    text-align:right;
+    float:right;
+    font-family:'fileFont', 'Courier New', monospace;
+    margin-top:1vh;
+}
+button{
+    cursor:pointer;
+}
+
+/*apps*/
+
+#arettaChildhoodPhoto{
+    position:relative;
+    left: 10.5vw;
+    top: -5vh;
+    margin:0px;
+    padding:0px;
+    aspect-ratio: 3/2;
+    border:none;
+    background-color:inherit;
+    font-family: "Satisfy", cursive;
+    line-height:10px;
+}
+#arettaChildhoodPhoto:hover{
+    transform:translateY(-10px);
+}
+#arettaChildhoodPhoto img{
+    margin-left:auto;
+    margin-right:auto;
+    height:14vh;
+}
+#mockFiles{
+    position:relative;
+    left:-7.5vw;
+    top: 9vh;
+    background-color:inherit;
+    margin:0px;
+    padding:0px;
+    border:none;
+    font-family: "Satisfy", cursive;
+    line-height:15px;
+}
+#mockFiles img{
+    width:7vw;
+    aspect-ratio:4/3;
+}
+#mockFiles:hover{
+    transform:translateY(-10px);
+}
+#mockEmail{
+    position:relative;
+    left: 5vw;
+    top: 9vh;
+    margin:0px;
+    padding:0px;
+    border:none;
+    background-color:inherit;
+    font-family: "Satisfy", cursive;
+    line-height:15px;
+}
+#mockEmail img{
+    width:5.5vw;
     aspect-ratio:1/1;
 }
-footer{
-    display:flex;
-    background-color:aqua;
+#mockEmail:hover{
+    transform:translateY(-10px);
 }
-#guess{
+#arettasSchedule{
+    position:relative;
+    left: -20.5vw;
+    top: 27vh;
+    margin:0px;
+    padding:0px;
+    border:none;
+    background-color:inherit;
+    font-family: "Satisfy", cursive;
+    line-height:15px;
+}
+#arettasSchedule img{
+    width:8vw;
+    aspect-ratio:4/3;
+}
+#arettasSchedule:hover{
+    transform:translateY(-10px);
+}
+#mockContacts{
+    position:relative;
+    left:-18.5vw;
+    top: 26.5vh;
+    margin:0px;
+    padding:0px;
+    border:none;
+    background-color:inherit;
+    font-family: "Satisfy", cursive;
+    line-height:15px;
+}
+#mockContacts img{
+    width:5.5vw;
+    aspect-ratio:1/1;
+}
+#mockContacts:hover{
+    transform:translateY(-10px);
+}
+#guessTheNumber{
+    position:relative;
+    left:-15.4vw;
+    top: 26.5vh;
+    margin:0px;
+    padding:0px;
+    border:none;
+    background-color:inherit;
+    font-family: "Satisfy", cursive;
+    line-height:15px;
+}
+#guessTheNumber img{
+    width:5.5vw;
+    aspect-ratio:1/1;
+}
+#guessTheNumber:hover{
+    transform:translateY(-10px);
+}
+#wordGuessGame{
+    position:relative;
+    left:-40.5vw;
+    top: 45vh;
+    margin:0px;
+    padding:0px;
+    border:none;
+    background-color:inherit;
+    font-family: "Satisfy", cursive;
+    line-height:15px;
+}
+#wordGuessGame img{
+    width:5.5vw;
+    aspect-ratio:1/1;
+}
+
+/*footer*/
+
+footer{
+    background-color:#89476c;
+    border:10px, solid,#89476c;
+    border-right:none;
+    border-left:none;
+    border-bottom:none;
+    display:flex;
+    height:13.45vh;
+    font-family:'fileFont', 'Courier New', monospace;
+    color:#000000;
+}
+#guess_perpretrator{
     display:inline-block;
     width:33.33vw;
+    text-align:center;
+    text-decoration:none;
+    color:#000000;
+    padding-top:5vh;
+    font-size:2rem;
+}
+#guess_perpretrator:visited{
+    text-decoration:none;
+}
+.guess_perpretrator{
+    background-image:url('../assets/indexFooter.png');
+    background-size:cover;
+}
+.guess_perpretrator:hover{
+    transform: translateY(-20px);
+    height: calc(13vh + 35px);
 }
 .webDetails{
     display:flex;
+    background-image:url('../assets/indexCopyright.png');
+    background-size:cover;
+    padding-top:2vh;
 }
 #logo{
     width:6vw;
     float:left;
+    margin:0px;
 }
 #title{
     display:inline-block;
-    width:27.33vw;
+    width:33.33vw;
+    text-align:center;
+    margin-left:-2vw;
+    font-size:1.5rem;
+    line-height:2vh;
+}
+#copyright{
+    font-size:0.67rem;
+    line-height:2vh;
 }
 #openNotes{
     display:inline-block;
     width:33.33vw;
+    border:none;
     border-radius:0px;
+    background-image:url('../assets/indexFooter.png');
+    background-size:cover;
+    background-color:inherit;
+    margin-right:0px;
+    font-family:'fileFont', 'Courier New', monospace;
+    color:#000000;
+    font-size:2rem;
+    background-color:#00000000;
 }
-
+#openNotes:hover{
+    transform: translateY(-20px);
+    height: calc(13vh + 35px);
+}
 .notes{
     font-family: 'fileFont', 'Courier New', monospace;
-    background-color:black;
+    background-color:#000000;
     opacity:0.8;
     border-radius:20px;
     color:white;
