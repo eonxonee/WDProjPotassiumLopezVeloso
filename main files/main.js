@@ -16,11 +16,3 @@ function day(){
     document.getElementById("day").innerHTML= "1";
     document.getElementById("date").innerHTML= "18";
 }
-
-const notes_open=document.getElementById("openNotes");
-const notes_modal=document.getElementById("notes");
-
-notes_open.addEventListener("click",open);
-function open(){
-    notes_modal.classList.add("open");
-}

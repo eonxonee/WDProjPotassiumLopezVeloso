@@ -19,7 +19,8 @@ body{
 .container{
     background-image: url('../assets/laptopbg.png');
     background-size:cover;
-    border:20px,solid,#89476c;
+    background-attachment: fixed;
+    border:20px,solid,#905375a9;
     border-bottom:none;
     position:relative;
     min-height:calc(100vh - 17.6vh);
@@ -53,7 +54,7 @@ button{
 #arettaChildhoodPhoto{
     position:fixed;
     top:18vh;
-    left:10vw;
+    left:10.5vw;
     margin:0px;
     padding:0px;
     aspect-ratio: 3/2;
@@ -85,7 +86,7 @@ button{
 #mockEmail{
     position:fixed;
     top:35vh;
-    left:20vw;
+    left:21.5vw;
     margin:0px;
     padding:0px;
     border:none;
@@ -94,12 +95,12 @@ button{
     line-height:15px;
 }
 #mockEmail img{
-    width:5.5vw;
+    width:6vw;
     aspect-ratio:1/1;
 }
 #arettasSchedule{
     position:fixed;
-    top:50vh;
+    top:51vh;
     left:2vw;
     margin:0px;
     padding:0px;
@@ -114,7 +115,7 @@ button{
 }
 #mockContacts{
     position:fixed;
-    top:51vh;
+    top:45vh;
     left:11.5vw;
     margin:0px;
     padding:0px;
@@ -124,13 +125,13 @@ button{
     line-height:15px;
 }
 #mockContacts img{
-    width:5.5vw;
+    width:7vw;
     aspect-ratio:1/1;
 }
 #guessTheNumber{
     position:fixed;
     top:51vh;
-    left:19.5vw;
+    left:21.3vw;
     margin:0px;
     padding:0px;
     border:none;
@@ -139,12 +140,16 @@ button{
     line-height:15px;
 }
 #guessTheNumber img{
-    width:5.5vw;
+    width:6vw;
     aspect-ratio:1/1;
+}
+#guessTheNumber a{
+    text-decoration:none;
+    color:black;
 }
 #wordGuessGame{
     position:fixed;
-    top:70vh;
+    top:69vh;
     left:2.1vw;
     margin:0px;
     padding:0px;
@@ -154,7 +159,7 @@ button{
     line-height:15px;
 }
 #wordGuessGame img{
-    width:5.5vw;
+    width:6vw;
     aspect-ratio:1/1;
 }
 #wordGuessGame a{
@@ -163,8 +168,8 @@ button{
 }
 #arettaPicture{
     position:fixed;
-    top:69vh;
-    left:20vw;
+    top:68vh;
+    left:21.5vw;
     margin:0px;
     padding:0px;
     border:none;
@@ -173,13 +178,13 @@ button{
     line-height:15px;
 }
 #arettaPicture img{
-    width:5.5vw;
+    width:6vw;
     aspect-ratio:5/6;
 }
 #mockSetting{
     position:fixed;
     top:69vh;
-    right:10vw;
+    right:8vw;
     margin:0px;
     padding:0px;
     border:none;
@@ -191,12 +196,26 @@ button{
     width:6vw;
     border-radius:50%;
 }
+#mockTrashbin{
+    position:fixed;
+    top:54vh;
+    right:2vw;
+    margin:0px;
+    padding:0px;
+    border:none;
+    background-color:inherit;
+    font-family: "Satisfy", cursive;
+    line-height:15px;
+}
+#mockTrashbin img{
+    width:6vw;
+}
 
 /*footer*/
 
 footer{
-    background-color:#89476c;
-    border:10px, solid,#89476c;
+    background-color:#905375ce;
+    border:10px,solid,#90537507;
     border-right:none;
     border-left:none;
     border-bottom:none;
