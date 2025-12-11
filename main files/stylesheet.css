@@ -47,11 +47,13 @@ button{
 }
 
 /*apps*/
-
+.applications button:hover{
+    transform:translateY(-10px);
+}
 #arettaChildhoodPhoto{
-    position:relative;
-    top:12vh;
-    left:-10vw;
+    position:fixed;
+    top:18vh;
+    left:10vw;
     margin:0px;
     padding:0px;
     aspect-ratio: 3/2;
@@ -60,19 +62,16 @@ button{
     font-family: "Satisfy", cursive;
     line-height:10px;
 }
-#arettaChildhoodPhoto:hover{
-    transform:translateY(-10px);
-}
 #arettaChildhoodPhoto img{
     margin-left:auto;
     margin-right:auto;
     height:14vh;
 }
 #mockFiles{
-    position:relative;
+    position:fixed;
+    top:35vh;
+    left:2vw;
     background-color:inherit;
-    top:25vh;
-    left:-28vw;
     margin:0px;
     padding:0px;
     border:none;
@@ -83,13 +82,10 @@ button{
     width:7vw;
     aspect-ratio:4/3;
 }
-#mockFiles:hover{
-    transform:translateY(-10px);
-}
 #mockEmail{
-    position:relative;
-    top:25vh;
-    left:-15vw;
+    position:fixed;
+    top:35vh;
+    left:20vw;
     margin:0px;
     padding:0px;
     border:none;
@@ -101,11 +97,10 @@ button{
     width:5.5vw;
     aspect-ratio:1/1;
 }
-#mockEmail:hover{
-    transform:translateY(-10px);
-}
 #arettasSchedule{
-    position:relative;
+    position:fixed;
+    top:50vh;
+    left:2vw;
     margin:0px;
     padding:0px;
     border:none;
@@ -117,13 +112,10 @@ button{
     width:8vw;
     aspect-ratio:4/3;
 }
-#arettasSchedule:hover{
-    transform:translateY(-10px);
-}
 #mockContacts{
-    position:relative;
-    top:40vh;
-    left:-29.1vw;
+    position:fixed;
+    top:51vh;
+    left:11.5vw;
     margin:0px;
     padding:0px;
     border:none;
@@ -135,11 +127,10 @@ button{
     width:5.5vw;
     aspect-ratio:1/1;
 }
-#mockContacts:hover{
-    transform:translateY(-10px);
-}
 #guessTheNumber{
-    position:relative;
+    position:fixed;
+    top:51vh;
+    left:19.5vw;
     margin:0px;
     padding:0px;
     border:none;
@@ -151,11 +142,10 @@ button{
     width:5.5vw;
     aspect-ratio:1/1;
 }
-#guessTheNumber:hover{
-    transform:translateY(-10px);
-}
 #wordGuessGame{
-    position:relative;
+    position:fixed;
+    top:70vh;
+    left:2.1vw;
     margin:0px;
     padding:0px;
     border:none;
@@ -170,6 +160,36 @@ button{
 #wordGuessGame a{
     text-decoration:none;
     color:black;
+}
+#arettaPicture{
+    position:fixed;
+    top:69vh;
+    left:20vw;
+    margin:0px;
+    padding:0px;
+    border:none;
+    background-color:inherit;
+    font-family: "Satisfy", cursive;
+    line-height:15px;
+}
+#arettaPicture img{
+    width:5.5vw;
+    aspect-ratio:5/6;
+}
+#mockSetting{
+    position:fixed;
+    top:69vh;
+    right:10vw;
+    margin:0px;
+    padding:0px;
+    border:none;
+    background-color:inherit;
+    font-family: "Satisfy", cursive;
+    line-height:15px;
+}
+#mockSetting img{
+    width:6vw;
+    border-radius:50%;
 }
 
 /*footer*/
@@ -245,26 +265,4 @@ footer{
 #openNotes:hover{
     transform: translateY(-20px);
     height: calc(13vh + 35px);
-}
-.notes{
-    font-family: 'fileFont', 'Courier New', monospace;
-    background-color:#000000;
-    opacity:0.8;
-    border-radius:20px;
-    color:white;
-    margin-left: 45vw;
-    pointer-events:none;
-    opacity:0;
-    width: 35vw;
-    height:80vh;
-    position:fixed;
-}
-.notes.open{
-    opacity:1;
-    z-index:999;
-}
-#notesTitle{
-    font-size: 3rem;
-    position:relative;
-    margin-left: 3vw;
 }
