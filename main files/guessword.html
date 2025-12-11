@@ -78,10 +78,11 @@
     <input type="text" id="guessInput" maxlength="1" autocomplete="off">
     <button onclick="makeGuess()" id="guessBtn">Guess</button>
     <p id="message"></p>
+    <button onclick="history.back()">Go Back</button>
 </div>
 
 <script>
-    var secretWord = ["k", "a", "l", "l", "e", "r", "g", "i", "s"];
+var secretWord = ["k", "a", "l", "l", "e", "r", "g", "i", "s"];
 var guessedWord = [];
 var attemptsLeft = 5;
 
