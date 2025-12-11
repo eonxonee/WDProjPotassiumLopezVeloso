@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    <style> 
+        @font-face{
+        font-family: "amore";
+        src: url("../assets/Amore Christmas.otf");
+    }
+
+    body {
+        font-style: italic;
+        color: #fff6b6;
+        background-image: url("../assets/guessbg.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    h1 {
+        color: #fff6b6;
+        text-align: center;
+        font-size: xx-large;
+        font-family: amore;
+        font-style: italic;
+        margin-top: 40px;
+        text-shadow: 0 4px 10px rgba(255, 238, 88, 0.95);
+    }
+    #gameContainer {
+        background: rgb(69, 15, 97);
+        border-radius: 20px;
+        padding: 30px;
+        max-width: 400px;
+        margin: 60px auto;
+        box-shadow: 0 4px 16px rgb(255, 246, 200);
+        text-align: center;
+    }
+    button {
+        background-color: #fff6b6;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+    #wordDisplay {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        letter-spacing: 0.2em;
+    }
+    #message {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+    input[type="text"] {
+        font-size: 1.2rem;
+        padding: 8px;
+        width: 40px;
+        text-align: center;
+        border-radius: 5px;
+        border: 1px solid #10429f;
+        margin-right: 10px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Guess the number</h1>
+    <div id="gameContainer">
+        <p id="wordDisplay"></p>
+        <input type="text" id="guessInput" maxlength="3" />
+        <button id="guessButton">Guess</button>
+        <p id="message"></p>
+    </div>
+
+<script>
+function guessNumber(secretNumber, guess) {
+    if (guess === secretNumber) return "Correct! You guessed it!";
+    if (guess < secretNumber) return "Too low, guess higher!";
+    return "Too high, guess lower!";
+}
+
+function playGame(secretNumber, maxAttempts = 10) {
+    let attempts = 0;
+    let guessed = false;
+
+    while (attempts < maxAttempts && !guessed) {
+        const input = prompt(`Guess a number between 1 and 100 (Attempt ${attempts + 1}/${maxAttempts}):`);
+        if (input === null) {
+            console.log("Game cancelled.");
+            return;
+        }
+
+        const playerGuess = Number(input);
+        if (Number.isNaN(playerGuess)) {
+            console.log("Please enter a valid number.");
+            continue;
+        }
+
+        attempts++;
+        const result = guessNumber(secretNumber, playerGuess);
+        console.log(result);
+
+        if (playerGuess === secretNumber) {
+            guessed = true;
+            console.log(`You won in ${attempts} attempt${attempts > 1 ? "s" : ""}!`);
+            return;
+        }
+    }
+
+    if (!guessed) console.log(`Game over! The number was ${secretNumber}.`);
+}
+
+const secret = Math.floor(Math.random() * 100) + 1;
+playGame(secret);
+</script>
+</body>
+</html>
