@@ -78,7 +78,7 @@
     <input type="text" id="guessInput" maxlength="1" autocomplete="off">
     <button onclick="makeGuess()" id="guessBtn">Guess</button>
     <p id="message"></p>
-    <button onclick="history.back()">Go Back</button>
+    <button id="backButton">Go Back</button>
 </div>
 
 <script>
@@ -152,6 +152,10 @@ function makeGuess() {
     input.value = "";
     input.focus();
 }
+
+document.getElementById("backButton").addEventListener("click", function() {
+  window.history.back();
+});
 </script>
 </body>
 </html>
