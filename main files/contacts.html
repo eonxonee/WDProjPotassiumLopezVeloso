@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <style> 
+        @font-face{
+        font-family: "amore";
+        src: url("../assets/Amore Christmas.otf");
+    }
+
+    body {
+        color: #230b5b;
+        background-color: darkslateblue;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    h1 {
+        color: #ffffff;
+        text-align: center;
+        font-size: xx-large;
+        font-family: amore;
+        font-style: italic;
+        margin-top: 40px;
+        text-shadow: 0 4px 10px rgba(0, 0, 0, 0.95);
+    }
+    #contactsContainer {
+        background: rgb(29, 15, 97);
+        border-radius: 20px;
+        padding: 30px;
+        max-width: 400px;
+        margin: 60px auto;
+        box-shadow: 0 4px 16px rgba(146, 92, 209, 0.95);
+        text-align: center;
+    }
+    button {
+        background-color: #9ca6fa;
+        font-family: amore;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+
+    #messagesDisplay {
+        margin-top: 12px;
+        font-weight: bold;
+    }
+    
+    input[type="text"] {
+        font-size: 1.2rem;
+        padding: 8px;
+        width: 80px;
+        text-align: center;
+        border-radius: 5px;
+        border: 1px solid #10919f;
+        margin-right: 10px;
+        background: white;
+        color: black;
+    }
+    </style>
+</head>
+<body>
+<h1>Contacts</h1>
+    <div id="contactsContainer">
+        <p id="wordDisplay"></p>
+        <input type="text" id="guessInput" maxlength="3" />
+        <button id="guessButton">Guess</button>
+        <p id="message"></p>
+        <p id="attemptsDisplay"></p>
+        <button id="backButton">Go Back</button>
+    </div>
+</body>
+</html>
