@@ -92,7 +92,7 @@
 
 <script>
 (function () {
-    const secret = Math.floor(Math.random() * 100) + 1;
+    const secret = 19;
     const maxAttempts = 10;
     let attemptsLeft = maxAttempts;
 
@@ -136,7 +136,7 @@
         }
 
         if (val === secret) {
-            finish(`Congratulations! You guessed the number ${secret}!`);
+            finish(`Congratulations! You guessed the number ${secret}! Did you know?`);
             return;
         }
 

@@ -12,13 +12,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
 </head>
 
-<body onload="clock(), day()">
+<body onload="clock()">
 <div class="container">
 <header>
 <h1>Aretta's Laptop</h1>
-<h4 id="timeDetails">Time: <span id=time></span><br>
-Date: 2/<span id=date></span>/2019<br>
-Day: <span id=day></span></h4>
+<h4 id="timeDetails">Time: <span data-action="clock"id=time></span><br>
+Date: <span data-action="monthCount"id=month>2</span>/<span data-action="dayCount"id=day>18</span>/<span data-action="yearCount" id="year">2019</span><br>
+Day: <span id=dayCounter>1</span></h4>
 </header>
 <div class="applications">
     <button id="arettaChildhoodPhoto"><img src="../assets/arettaChilhoodTemp.png"><br>Childhood.png</button>
