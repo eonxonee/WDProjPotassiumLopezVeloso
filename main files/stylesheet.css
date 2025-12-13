@@ -16,6 +16,70 @@ body{
     margin:0;
     background-size:cover;
 }
+.openingScreen{
+    background-color:black;
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    z-index:1;
+    cursor:pointer;
+}
+@keyframes openingFade{
+    from{background-color: #000000;}
+    to{background-color:#000000E6;}
+}
+@keyframes hideElement{
+    from{opacity:100;}
+    to{opacity:0;}
+}
+@keyframes showElement{
+    from{opacity:0;}
+    to{opacity:100;}
+}
+@keyframes caseFileSlideIn{
+    0%{transform:translateY(-100vh);}
+    100%{transform:translateY(103vh);}
+}
+#titleScreen{
+    position: fixed;
+    top:40vh;
+    left:10vw;
+    font-family:'fileFont', 'Courier New', monospace;
+    font-size:5rem;
+    color:#FFFFFF;
+    width:100%;
+    z-index:2;
+}
+.titleScreenFade{
+    animation: openingFade 1.5s ease-out forwards;
+}
+.titleScreenHide{
+    opacity:0;
+    animation: hideElement 1.5s ease-out forwards;
+}
+#caseFile{
+    margin-top:-100vh;
+    left: 35vw;
+    height:90vh;
+    position:fixed;
+    background-color:none;
+}
+.caseFileEnter{
+    animation:caseFileSlideIn 1s ease-in forwards;
+    animation-delay: 1.5s;
+}
+#clickStart{
+    position:fixed;
+    top:90vh;
+    left:37vw;
+    font-family:'fileFont', 'Courier New', monospace;
+    font-size:1.5rem;
+    color:#FFFFFF;
+    width:100%;
+    opacity:0;
+}
+
+
 .container{
     background-image: url('../assets/laptopbg.png');
     background-size:cover;
