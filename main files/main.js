@@ -11,14 +11,17 @@
     var newDay=localStorage.getItem("day");
     var newDayCounter=localStorage.getItem("dayCounter");
     var newMonth=localStorage.getItem("month");
+    var newYear=localStorage.getItem("year");
     
     if(newDay){document.getElementById("day").innerHTML=newDay;}
     if(newDayCounter){document.getElementById("dayCounter").innerHTML=newDay;}
     if(newMonth){document.getElementById("month").innerHTML=newMonth;}
+    if(newYear){document.getElementById("year").innerHTML=newYear;}
 
     var day=localStorage.getItem("day") || 18;
     var dayCounter=localStorage.getItem("dayCounter") || 1;
     var month=localStorage.getItem("month") || 2;
+    var year=localStorage.getItem("year") || 2019;
 
 
     if(hours%2==0 && minutes==0 && seconds==0){
@@ -40,6 +43,13 @@
         monthNum++
         document.getElementById("month").innerHTML=monthNum;
         localStorage.setItem("month", monthNum.toString());
+    }
+    if(monthNum==12){
+        monthNum=1;
+        var yearNum=Number(year);
+        yearNum++
+        document.getElementById("year").innerHTML=yearNum;
+        localStorage.setItem("year", yearNum.toString());
     }
 }
 function addZero(i){
