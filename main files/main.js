@@ -8,13 +8,39 @@
     document.getElementById("time").innerHTML = hours +":"+ minutes +":"+ seconds;
     setTimeout(clock,1000);
 
-    let day=Number(document.getElementById("day").innerHTML);
-    let dayCounter=Number(document.getElementById("dayCounter").innerHTML)
-    if(hours==12 && minutes==0 && seconds==0){
-        document.getElementById("day").innerHTML= day+1;
-        document.getElementById("dayCounter").innerHTML= dayCounter+1;
-    }
+    var newDay=localStorage.getItem("day");
+    var newDayCounter=localStorage.getItem("dayCounter");
+    var newMonth=localStorage.getItem("month");
     
+    if(newDay){document.getElementById("day").innerHTML=newDay;}
+    if(newDayCounter){document.getElementById("dayCounter").innerHTML=newDay;}
+    if(newMonth){document.getElementById("month").innerHTML=newMonth;}
+
+    var day=localStorage.getItem("day") || 18;
+    var dayCounter=localStorage.getItem("dayCounter") || 1;
+    var month=localStorage.getItem("month") || 2;
+
+
+    if(hours%2==0 && minutes==0 && seconds==0){
+        var dayNum=Number(day);
+        var dayCounterNum=Number(dayCounter);
+        dayNum++
+        dayCounterNum++
+        document.getElementById("day").innerHTML=dayNum;
+        localStorage.setItem("day", dayNum.toString());
+        document.getElementById("dayCounter").innerHTML=dayCounterNum;
+        localStorage.setItem("dayCounter", dayCounterNum.toString());
+    }
+    if(dayNum==30){
+        dayNum=1;
+        document.getElementById("day").innerHTML=dayNum;
+        localStorage.setItem("day", dayNum.toString());
+
+        var monthNum=Number(month);
+        monthNum++
+        document.getElementById("month").innerHTML=monthNum;
+        localStorage.setItem("month", monthNum.toString());
+    }
 }
 function addZero(i){
     if(i<10){i="0"+i}
@@ -23,12 +49,21 @@ function addZero(i){
 let openingScreen=document.getElementById("openingScreen");
 let titleScreen=document.getElementById("titleScreen");
 let caseFile=document.getElementById("caseFile");
+let clickStart=document.getElementById("clickStart");
 
 openingScreen.addEventListener("click",start);
-
+    let clickCount=0;
 function start(){
-    openingScreen.classList.add("titleScreenFade");
-    titleScreen.classList.add("titleScreenHide");
-    caseFile.classList.add("caseFileEnter");
-
+    clickCount++
+    
+    if(clickCount==1){
+        openingScreen.classList.add("titleScreenFadein");
+        titleScreen.classList.add("titleScreenHide");
+        caseFile.classList.add("caseFileEnter");
+        clickStart.classList.add("clickStartClicked");
+    }else if(clickCount==2){
+        openingScreen.classList.add("titleScreenFadeout");
+        caseFile.classList.add("caseFileExit");
+        clickStart.classList.add("clickStartOut");
+    }
 }

@@ -28,17 +28,26 @@ body{
     from{background-color: #000000;}
     to{background-color:#000000E6;}
 }
+@keyframes exitingFade{
+    from{background-color: #000000E6;}
+    to{background-color:transparent;}
+}
 @keyframes hideElement{
     from{opacity:100;}
     to{opacity:0;}
 }
 @keyframes showElement{
-    from{opacity:0;}
+    from{ opacity:0;}
     to{opacity:100;}
 }
 @keyframes caseFileSlideIn{
     0%{transform:translateY(-100vh);}
-    100%{transform:translateY(103vh);}
+    100%{transform:translateY(92vh);}
+}
+@keyframes caseFileSlideOut{
+    0%{transform:translateY(92vh);}
+    50% {transform:translateY(-80vh);}
+    100%{transform:translateY(-100vh);}
 }
 #titleScreen{
     position: fixed;
@@ -50,36 +59,50 @@ body{
     width:100%;
     z-index:2;
 }
-.titleScreenFade{
+.titleScreenFadein{
     animation: openingFade 1.5s ease-out forwards;
+}
+.titleScreenFadeout{
+    animation: exitingFade 1.5s ease-out forwards;
+    pointer-events:none;
 }
 .titleScreenHide{
     opacity:0;
     animation: hideElement 1.5s ease-out forwards;
 }
 #caseFile{
-    margin-top:-100vh;
+    margin-top:-90vh;
     left: 35vw;
     height:90vh;
     position:fixed;
     background-color:none;
 }
 .caseFileEnter{
-    animation:caseFileSlideIn 1s ease-in forwards;
+    animation:caseFileSlideIn 2s ease-out forwards;
     animation-delay: 1.5s;
+}
+.caseFileExit{
+    animation: caseFileSlideOut 2s ease-in forwards;
+    pointer-events:none;
 }
 #clickStart{
     position:fixed;
-    top:90vh;
-    left:37vw;
+    top:92vh;
+    left:40vw;
     font-family:'fileFont', 'Courier New', monospace;
-    font-size:1.5rem;
+    font-size:1rem;
     color:#FFFFFF;
     width:100%;
     opacity:0;
 }
-
-
+.clickStartClicked{
+    animation: showElement 2.5s ease-out forwards;
+    animation-delay: 4.5s;
+}
+.clickStartOut{
+    animation: hideElement 2.5s ease-out forwards;
+    pointer-events:none;alism
+}
 .container{
     background-image: url('../assets/laptopbg.png');
     background-size:cover;
