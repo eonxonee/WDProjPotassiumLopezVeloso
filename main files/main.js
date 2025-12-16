@@ -99,11 +99,11 @@ soundBtn.addEventListener("click", bgMusicControls);
 function bgMusicControls(){
     if(!bgMusic.paused){
         bgMusic.pause();
-        document.getElementById("unmutedIcon").src="../assets/bgMusicMuted.png";
+        document.getElementById("unmutedIcon").src="assets/bgMusicMuted.png";
         document.getElementById("bgMusicState").innerHTML="BG Music : OFF";
     }else{
         bgMusic.play();
-        document.getElementById("unmutedIcon").src="../assets/bgMusicUnmuted.png";
+        document.getElementById("unmutedIcon").src="assets/bgMusicUnmuted.png";
         document.getElementById("bgMusicState").innerHTML="BG Music : ON";
     }
 }
