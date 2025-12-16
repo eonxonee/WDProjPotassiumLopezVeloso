@@ -364,21 +364,21 @@ footer{
 }
 .webDetails{
     position:fixed;
-    left:33.33vw;
-    width:33.33vw;
-    height:14vh;
+    left:33vw;
+    width:35vw;
+    height:20vh;
+    bottom:-4vh;
     background-image:url('../assets/indexCopyright.png');
     background-size:cover;
     padding-top:2vh;
 }
 #logo{
+    position:fixed;
     width:6vw;
-    float:left;
-    margin:0px;
+    left:35vw;
+    bottom:1vh;
 }
 #title{
-    position:fixed;
-    right:33.33vw;
     display:inline-block;
     width:33.33vw;
     text-align:center;
@@ -386,9 +386,18 @@ footer{
     font-size:1.5rem;
     line-height:2vh;
 }
+footer h3{
+    position:fixed;
+    left: 37.5vw;
+    bottom:-1vh;
+}
 #copyright{
     font-size:0.67rem;
     line-height:2vh;
+}
+#sources{
+    font-size:0.67rem;
+    line-height:0.5vh;
 }
 #openNotes{
     position:fixed;
