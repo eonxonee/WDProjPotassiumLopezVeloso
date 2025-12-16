@@ -101,3 +101,80 @@ function bgMusicControls(){
     }
 }
 document.querySelectorAll("button")
+
+// Guess Number Game
+
+(function() {
+    const secret = 19;
+    const maxAttempts = 10;
+    let attemptsLeft = maxAttempts;
+
+    const display = document.getElementById("wordDisplay");
+    const input = document.getElementById("guessInput");
+    const btn = document.getElementById("guessButton");
+    const message = document.getElementById("message");
+    const attemptsDisplay = document.getElementById("attemptsDisplay");
+
+    function showPrompt() {
+        display.textContent = "Guess a number between 1 and 100";
+        attemptsDisplay.textContent = `Attempts left: ${attemptsLeft} / ${maxAttempts}`;
+    }
+
+    function finish(text) {
+        message.textContent = text;
+        input.disabled = true;
+        btn.disabled = true;
+    }
+
+    function makeGuess() {
+        const raw = input.value.trim();
+        if (raw === "") {
+            message.textContent = "Please enter a number.";
+            return;
+        }
+
+        const val = Number(raw);
+        if (!Number.isInteger(val)) {
+            message.textContent = "Enter an integer from 1 to 100.";
+            input.value = "";
+            input.focus();
+            return;
+        }
+
+        if (val < 1 || val > 100) {
+            message.textContent = "Enter a number between 1 and 100.";
+            input.value = "";
+            input.focus();
+            return;
+        }
+
+        if (val === secret) {
+            finish(`Congratulations! You guessed the number ${secret}! Did you know?`);
+            return;
+        }
+
+        attemptsLeft--;
+        message.textContent = val < secret ? "Too low — guess higher!" : "Too high — guess lower!";
+        attemptsDisplay.textContent = `Attempts left: ${attemptsLeft} / ${maxAttempts}`;
+
+        if (attemptsLeft <= 0) {
+            finish(`Game over! The number was ${secret}.`);
+            return;
+        }
+
+        input.value = "";
+        input.focus();
+    }
+
+    btn.addEventListener("click", makeGuess);
+    input.addEventListener("keyup", function (e) {
+        if (e.key === "Enter") makeGuess();
+    });
+
+    showPrompt();
+    input.focus();
+})();
+
+document.getElementById("backButton").addEventListener("click", function() {
+    window.history.back();
+});
