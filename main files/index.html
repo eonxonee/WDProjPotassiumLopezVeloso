@@ -12,10 +12,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
 </head>
 
-<body onload="clock()">
+<body>
+<audio src="../assets/introMusic.mp3" id="introAudio"></audio>
+<audio src="../assets/bgMusic.wav" id="bgMusic" loop></audio>
+<audio src="../assets/caseSlideAudio.mp3" id="caseSlideAudio"></audio>
     <div class="openingScreen" id="openingScreen">
     <img src="../assets/openingNote.png" id="caseFile">
         <h1 id="titleScreen">[Kallergis Conundrum]</h1>
+        <p id="introInstruction">[Click again to start]</p>
     <h3 id="clickStart">[Click anywhere to start]</h3>
     </div>
 <div class="container">
@@ -36,6 +40,7 @@ Day: <span id=dayCounter>1</span></h4>
     <button id="arettaPicture"><img src="../assets/arettaTemp.png"><br>Selfie.png</button>
     <button id="mockSetting"><img src="../assets/mockSettings.png"><br>Settings</button>
     <button id="mockTrashbin"><img src="../assets/trashcanIcon.png"><br>Trashbin</button>
+    <button id="bgMusicControls"><img src="../assets/bgMusicUnmuted.png"><p id="bgMusicState">Music : ON</p></button>
 </div>
 </div>
 <footer>

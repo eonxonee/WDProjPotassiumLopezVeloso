@@ -1,4 +1,5 @@
-    function clock(){
+addEventListener("load", clock);
+function clock(){
     const currentTime = new Date();
     var hours= currentTime.getHours();
     var minutes= currentTime.getMinutes();
@@ -60,20 +61,30 @@ let openingScreen=document.getElementById("openingScreen");
 let titleScreen=document.getElementById("titleScreen");
 let caseFile=document.getElementById("caseFile");
 let clickStart=document.getElementById("clickStart");
-
+let introInstruction=document.getElementById("introInstruction");
+let introAudio=document.getElementById("introAudio");
+let bgMusic=document.getElementById("bgMusic");
 openingScreen.addEventListener("click",start);
     let clickCount=0;
 function start(){
     clickCount++
-    
     if(clickCount==1){
+        introAudio.play();
+        introAudio.volume=0.5;
+        introInstruction.classList.add("introInstructionFadein");
+    }
+    if(clickCount==2){
         openingScreen.classList.add("titleScreenFadein");
         titleScreen.classList.add("titleScreenHide");
+        introInstruction.classList.add("introInstructionFadeout");
         caseFile.classList.add("caseFileEnter");
         clickStart.classList.add("clickStartClicked");
-    }else if(clickCount==2){
+    }else if(clickCount==3){
         openingScreen.classList.add("titleScreenFadeout");
         caseFile.classList.add("caseFileExit");
         clickStart.classList.add("clickStartOut");
+        bgMusic.play();
+        bgMusic.volume=0.2;
     }
 }
+let 
