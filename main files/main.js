@@ -64,6 +64,8 @@ let clickStart=document.getElementById("clickStart");
 let introInstruction=document.getElementById("introInstruction");
 let introAudio=document.getElementById("introAudio");
 let bgMusic=document.getElementById("bgMusic");
+let caseSlide=document.getElementById("caseSlideAudio");
+
 openingScreen.addEventListener("click",start);
     let clickCount=0;
 function start(){
@@ -79,6 +81,11 @@ function start(){
         introInstruction.classList.add("introInstructionFadeout");
         caseFile.classList.add("caseFileEnter");
         clickStart.classList.add("clickStartClicked");
+        setTimeout(sfxPlay,2000);
+        function sfxPlay(){
+        caseSlide.play();
+}
+
     }else if(clickCount==3){
         openingScreen.classList.add("titleScreenFadeout");
         caseFile.classList.add("caseFileExit");
@@ -100,4 +107,3 @@ function bgMusicControls(){
         document.getElementById("bgMusicState").innerHTML="BG Music : ON";
     }
 }
-document.querySelectorAll("button")
