@@ -15,6 +15,7 @@
 body{
     margin:0;
     background-size:cover;
+    background-color:#90537500;
 }
 .openingScreen{
     background-color:black;
@@ -118,13 +119,14 @@ body{
     pointer-events:none;
 }
 .container{
+    position:fixed;
     background-image: url('../assets/laptopbg.png');
     background-size:cover;
     background-attachment: fixed;
     border:20px,solid,#905375a9;
     border-bottom:none;
     position:relative;
-    min-height:calc(100vh - 17.6vh);
+    min-height:calc(100vh - 17.8vh);
 }
 
 /*header*/
@@ -269,7 +271,7 @@ button{
 }
 #arettaPicture{
     position:fixed;
-    top:68vh;
+    top:67.5vh;
     left:21.5vw;
     margin:0px;
     padding:0px;
@@ -285,7 +287,7 @@ button{
 #mockSetting{
     position:fixed;
     top:69vh;
-    right:8vw;
+    right:8.5vw;
     margin:0px;
     padding:0px;
     border:none;
@@ -299,7 +301,7 @@ button{
 }
 #mockTrashbin{
     position:fixed;
-    top:54vh;
+    top:52vh;
     right:2vw;
     margin:0px;
     padding:0px;
@@ -313,13 +315,13 @@ button{
 }
 #bgMusicControls{
     position:fixed;
-    top:73vh;
-    right:2.5vw;
+    top:71.5vh;
+    right:3vw;
     margin:0px;
     padding:0px;
     border:none;
     background-color:inherit;
-    font-family:'fileFont', 'Courier New', monospace;
+    font-family:"Satisfy", cursive;
     line-height:0px;
 }
 #bgMusicControls img{
@@ -340,6 +342,8 @@ footer{
     color:#000000;
 }
 #guess_perpretrator{
+    position:fixed;
+    height:14vh;
     display:inline-block;
     width:33.33vw;
     text-align:center;
@@ -347,20 +351,22 @@ footer{
     color:#000000;
     padding-top:5vh;
     font-size:2rem;
+    position:fixed;
+    background-image:url('../assets/indexFooter.png');
+    background-size:cover;
 }
 #guess_perpretrator:visited{
     text-decoration:none;
 }
-.guess_perpretrator{
-    background-image:url('../assets/indexFooter.png');
-    background-size:cover;
-}
-.guess_perpretrator:hover{
+#guess_perpretrator:hover{
     transform: translateY(-20px);
-    height: calc(13vh + 35px);
+    height: calc(13vh + 18px);
 }
 .webDetails{
-    display:flex;
+    position:fixed;
+    left:33.33vw;
+    width:33.33vw;
+    height:14vh;
     background-image:url('../assets/indexCopyright.png');
     background-size:cover;
     padding-top:2vh;
@@ -371,6 +377,8 @@ footer{
     margin:0px;
 }
 #title{
+    position:fixed;
+    right:33.33vw;
     display:inline-block;
     width:33.33vw;
     text-align:center;
@@ -383,6 +391,9 @@ footer{
     line-height:2vh;
 }
 #openNotes{
+    position:fixed;
+    right:0px;
+    height:14vh;
     display:inline-block;
     width:33.33vw;
     border:none;

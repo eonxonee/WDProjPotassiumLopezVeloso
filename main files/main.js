@@ -87,4 +87,17 @@ function start(){
         bgMusic.volume=0.2;
     }
 }
-let 
+let soundBtn=document.getElementById("bgMusicControls");
+soundBtn.addEventListener("click", bgMusicControls);
+function bgMusicControls(){
+    if(!bgMusic.paused){
+        bgMusic.pause();
+        document.getElementById("unmutedIcon").src="../assets/bgMusicMuted.png";
+        document.getElementById("bgMusicState").innerHTML="BG Music : OFF";
+    }else{
+        bgMusic.play();
+        document.getElementById("unmutedIcon").src="../assets/bgMusicUnmuted.png";
+        document.getElementById("bgMusicState").innerHTML="BG Music : ON";
+    }
+}
+document.querySelectorAll("button")

@@ -1,0 +1,72 @@
+@font-face{
+    font-family: "amore";
+    src: url("../assets/Amore Christmas.otf");
+}
+
+body {
+    font-style: italic;
+    color: #b6fdff;
+    background-image: url("../assets/guessbg2.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+h1 {
+    color: #b6fdff;
+    text-align: center;
+    font-size: xx-large;
+    font-family: amore;
+    font-style: italic;
+    margin-top: 40px;
+    text-shadow: 0 4px 10px rgba(146, 92, 209, 0.95);
+}
+#gameContainer {
+    background: rgb(29, 15, 97);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 400px;
+    margin: 60px auto;
+    box-shadow: 0 4px 16px rgba(146, 92, 209, 0.95);
+    text-align: center;
+}
+button {
+    background-color: #9ca6fa;
+    font-family: amore;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+#wordDisplay {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+}
+#message {
+    margin-top: 12px;
+    font-weight: bold;
+}
+#attemptsDisplay {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: #b6fdff;
+    font-family: amore;
+}
+input[type="text"] {
+    font-size: 1.2rem;
+    padding: 8px;
+    width: 80px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #10919f;
+    margin-right: 10px;
+    background: white;
+    color: black;
+}
