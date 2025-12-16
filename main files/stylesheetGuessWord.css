@@ -11,6 +11,20 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+#backButton {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #fff6b6;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: amore;
+}
 h1 {
     color: #fff6b6;
     text-align: center;
@@ -31,7 +45,7 @@ h1 {
 }
 button {
     background-color: #fff6b6;
-    color: white;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 15px 30px;
     border-radius: 8px;

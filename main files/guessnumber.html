@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="stylesheetGuessNumber.css">
 </head>
 <body>
+    <button id="backButton">Back to Aretta's Laptop</button>
     <h1>Guess the number</h1>
     <div id="gameContainer">
         <p id="wordDisplay"></p>
         <input type="text" id="guessInput" maxlength="3" />
         <button id="guessButton">Guess</button>
         <p id="message"></p>
+        <p id="funFact"></p>
         <p id="attemptsDisplay"></p>
-        <button id="backButton">Go Back</button>
     </div>
 
 <script>
@@ -63,7 +64,8 @@
         }
 
         if (val === secret) {
-            finish(`Congratulations! You guessed the number ${secret}! Did you know?`);
+            finish(`Congratulations! You guessed the number ${secret}!`);
+            document.getElementById("funFact").innerHTML="Did you know? Julius Caesar got kidnapped by pirates!";
             return;
         }
 
