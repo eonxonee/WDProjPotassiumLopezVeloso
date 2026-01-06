@@ -1,5 +1,5 @@
 # Q3 Proposal Update
-## Final Title: Kallergis Conundrukm
+## Final Title: Kallergis Conundrum
 ## Features:
   * Works on phone and laptops
   * Has a "Notes App" in which users can type in their gathered information as well as their theories
