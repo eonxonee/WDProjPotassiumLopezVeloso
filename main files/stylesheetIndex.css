@@ -43,7 +43,7 @@ body{
 }
 @keyframes caseFileSlideIn{
     0%{transform:translateY(-100vh);}
-    100%{transform:translateY(92vh);}
+    100%{transform:translateY(103vh);}
 }
 @keyframes caseFileSlideOut{
     0%{transform:translateY(92vh);}
@@ -53,7 +53,7 @@ body{
 #titleScreen{
     position: fixed;
     top:40vh;
-    left:10vw;
+    left: 20%;
     font-family:'fileFont', 'Courier New', monospace;
     font-size:5rem;
     color:#FFFFFF;
@@ -63,7 +63,7 @@ body{
 #introInstruction{
     position:fixed;
     top:60vh;
-    left:40vw;
+    left:45vw;
     color:white;
     font-family:'fileFont', 'Courier New', monospace;
     font-size:1rem;
@@ -86,7 +86,7 @@ body{
     animation: hideElement 1.5s ease-out forwards;
 }
 #caseFile{
-    margin-top:-90vh;
+    margin-top:-100vh;
     left: 35vw;
     height:90vh;
     position:fixed;
