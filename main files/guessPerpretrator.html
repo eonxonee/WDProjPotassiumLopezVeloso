@@ -1,2 +1,43 @@
-<h1>[Content Unavailable]</h1>
-<p>update has not been released >:D</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hannah Lopez and Mathea Veloso">
+    <title>Guessing Game</title>
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <link rel="stylesheet" href="stylesheetGuessPerpetrator.css">
+</head>
+
+<body>
+<button class="backbutton" id="backButton" onclick="window.location.href='../index.html'">
+    Back to Aretta's Laptop
+</button>
+
+<div id="titleContainer">
+    <h1>Who did it?</h1>
+</div>
+
+<div id="inputContainer">
+    <form id="guessForm">
+    <label for="perpetrator">Perpetrator:</label>
+    <input type="text" id="perpetrator" name="perpetrator">
+    <input type="submit" value="Submit">
+    </form>
+</div>
+
+<script>
+    const perpetrator = "cain";
+
+    document.getElementById("guessForm").addEventListener("submit", function(event) {
+        const guess = document.getElementById("perpetrator").value.toLowerCase().trim();
+        
+        if (guess === perpetrator) {
+            alert("Correct! You guessed the perpetrator.");
+        } else {
+            alert("Incorrect. Try again.");
+        }
+    });
+</script>
+</body>
+</html>

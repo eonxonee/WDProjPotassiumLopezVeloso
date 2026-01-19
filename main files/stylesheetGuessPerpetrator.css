@@ -1,0 +1,88 @@
+@font-face {
+    font-family: "stephcarly";
+    src: url("../assets/StephCarlyDemo-Regular.ttf");
+}
+
+body {
+    font-family: stephcarly;
+    font-style: italic;
+    color: #ffffff;
+    background-color: #000000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.backbutton {
+    font-family: stephcarly;
+    font-style: italic;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: xxx-large;
+    font-family: stephcarly;
+    font-style: italic;
+    margin-top: 80px;
+    text-shadow: 0 4px 10px rgba(192, 0, 0, 0.95);
+}
+#inputContainer {
+    background: rgb(134, 4, 4);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 400px;
+    margin: 60px auto;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+button {
+    background-color: #800000;
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: stephcarly;
+    font-style: italic;
+}
+button:disabled {
+    background-color: #333;
+    cursor: not-allowed;
+}
+#wordDisplay {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 0.2em;
+}
+#message {
+    margin-top: 20px;
+    font-weight: bold;
+}
+input[type="text"] {
+    font-size: 1.2rem;
+    padding: 8px;
+    width: 40px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #800000;
+    margin-right: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: stephcarly;
+    font-style: italic; 
+}
+label {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    display: block;
+    font-family: stephcarly;
+    font-style: italic;
+}
