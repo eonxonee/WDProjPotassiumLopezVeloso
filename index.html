@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="main files/stylesheetIndex.css">
 </head>
 <body>
-<div class="main">
 
+<div class="main">
 <div class="grid-container">
 
     <div id="calendar"><img src="assets/calendarIcon.png"></div>
@@ -45,11 +45,21 @@
 
 </div>
     <div id="mask"></div>
-    <div class="toggle-footer" id="toggleFooter"><button id="footer-toggle-button" onclick="footerToggle()">//OPEN FOOTER//</button></div>
-    <div class="footer" id="footer">Footer</div>
-</div>
-    <div id="notes"></div>
+    
+    <div popover id="notes">
+        <h1>Notes</h1>
+        <textarea id="notesInput" placeholder="Pay attention. Be astonished. Tell about it; What have you discovered?"></textarea>
+        <button id="save" onclick="noteSave()">//checkmark img//</button>
 
-    <button popovertarget="notes">Notes //reworking footer, temp position//</button>
+    </div>
+
+    <div class="toggle-footer" id="toggleFooter"><button id="footer-toggle-button" onclick="footerToggle()">//OPEN FOOTER//</button></div>
+    
+    <div class="footer" id="footer">
+        <button popovertarget="notes" id="notesBtn" onclick="footerClose()">NOTES</button>
+    </div>
+
+</div>
+
 <script src="main files/main.js"></script>
 </body>
