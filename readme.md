@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Q3 Proposal Update
 ## Final Title: Kallergis Conundrum
 ## Features:
@@ -20,7 +20,7 @@
 
 ## Title: Kallergis Conundrum
 =======
-Z## Title: Kallergis Conundrum
+## Title: Kallergis Conundrum
 >>>>>>> 8e4c42f (website revamp init commit)
 ## Subtitle: The Murder Mystery Begins
 
