@@ -15,6 +15,9 @@ html, body{
     background-image: url('../assets/revampBg.png');
     background-size: cover;
 }
+button{
+    cursor:pointer;
+}
 /*Grid Styling (letter classes will be renamed)*/
 .main{
     max-height: 100vh;
@@ -26,26 +29,25 @@ html, body{
     grid-area: 1 / 1 / 9 / 17;
     max-height: 100vh;
     display:grid;
-    grid-template-columns: repeat(16, 1fr);
+    grid-template-columns: repeat(15, 1fr);
     grid-template-rows: repeat(8, 1fr);
     grid-gap: 1rem;
     margin: 1rem 1rem 0.5rem 1rem;
 
 }
 .grid-container div{
-    border-radius: 10px;
+    border-radius: 5%;
 }
-.grid-container div:hover{
-    transform: translateY(-100px);
-}
-.laptop img {
-    z-index: 1;
+.laptop:hover{
+    transform: translateY(-0.75rem);
+    cursor:pointer;
 }
 #mask{
     grid-area: 1 / 1 / 10  / 17;
     background-color: black;
     opacity:0;
     transition: opacity 0.67s ease;
+    pointer-events:none;
 }
 #mask.cover{
     opacity: 0.6;
@@ -56,7 +58,7 @@ html, body{
 #calendar img {
     width: 100%;
     height: 100%;  
-    border-radius: 10px;
+    border-radius: 5%;
     
 }
 #randPhotoA{
@@ -65,10 +67,9 @@ html, body{
 #randPhotoA img{
     width: 100%;
     height: 100%;
-    border-radius: 10px;
 }
 #music{
-    background-color: #ffffff88;
+    background-color: #ffffff6b;
     grid-area: 3 / 1 / 5 / 5;
     display:grid;
 }
@@ -91,61 +92,106 @@ html, body{
     background-color: #ffe4e0;
     grid-area: 5 / 1 / 7 / 3;
 }
-#E{
+#files{
     grid-area: 5 / 16 / 6 / 17;
 }
-#F{
+#files img{
+    width:100%;
+    height:100%;
+}
+#guessNum{
     grid-area: 6 / 16 / 7 / 17;
 }
-#G{
+#guessNum img{
+    width: 100%;
+    height:100%;
+}
+#schedule{
     grid-area: 7 / 16 / 8 / 17;
 }
-#H{
+#schedule img{
+    width:100%;
+    height: 100%;
+}
+#trash{
     grid-area: 8 / 16 / 9 / 17;
 }
-#I{
+#trash img{
+    width:100%;
+    height:100%;
+}
+#guessWord{
     grid-area: 6 / 15 / 7 / 16;
 }
-#J{
+#guessWord img{
+    width: 100%;
+    height: 100%;
+}
+#aretta{
     grid-area: 7 / 15 / 8 / 16;
 }
-#K{
+#aretta img{
+    width: 100%;
+    height:100%;
+}
+#childhood{
     grid-area: 8 / 15 / 9 / 16;
 }
-#L{
+#childhood img{
+    width: 100%;
+    height:100%;
+}
+#email{
     grid-area: 7 / 14 / 8 / 15;
 }
-#M{
+#email img{
+    width: 100%;
+    height:100%;
+}
+#settings{
     grid-area: 8 / 14 / 9 / 15;
 }
-#N{
-    grid-area: 8 / 13 / 9 / 14;
+#settings img{
+    width: 100%;
+    height:100%;
 }
-
+#messages{
+    grid-area: 7 / 13 / 8 / 14;
+}
+#messages img{
+    width: 100%;
+    height:100%;
+}
 /*footer styling*/
     /*-footer button*/
 .toggle-footer{
     z-index: 2;
     grid-area: 9 / 1 / 10 /17;
-    border-radius: 10px 10px 0 0 !important;
+    border-radius: 5% 5% 0 0 !important;
     transition: transform 0.67s ease; 
 }
 .toggle-footer.open{
-    transform:translateY(calc(-200% ));
+    transform:translateY(-200%);
 }
 .toggle-footer button{
     width: 100%;
     height: 100%;
     background-color: #eecec2;
-    cursor: pointer;
 }
     /*-footer content*/
 .footer{
     grid-area: 8 / 1 / 10 /17;
-    background-color: yellow;
+    background-color: white;
     transform: translateY(100%);
     transition: transform 0.67s ease;
 }
 .footer.reveal{
     transform: translateY(0%);
+}
+/*NOTES FEATURE*/
+#notes{
+    background-color: aqua;
+    position:fixed;
+    z-index: 10;
+    resize: both;
 }
