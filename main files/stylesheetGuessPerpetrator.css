@@ -11,6 +11,9 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 .backbutton {
@@ -20,6 +23,7 @@ body {
     top: 5%;
     left: 10%;
     transform: translate(-50%, -50%);
+    z-index: 1001;
 }
 
 h1 {
@@ -31,6 +35,7 @@ h1 {
     margin-top: 80px;
     text-shadow: 0 4px 10px rgba(192, 0, 0, 0.95);
 }
+
 #inputContainer {
     background: rgb(134, 4, 4);
     border-radius: 20px;
@@ -40,6 +45,7 @@ h1 {
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
+
 button {
     background-color: #800000;
     color: #ffffff;
@@ -52,19 +58,23 @@ button {
     font-family: stephcarly;
     font-style: italic;
 }
+
 button:disabled {
     background-color: #333;
     cursor: not-allowed;
 }
+
 #wordDisplay {
     font-size: 1.5rem;
     margin-bottom: 20px;
     letter-spacing: 0.2em;
 }
+
 #message {
     margin-top: 20px;
     font-weight: bold;
 }
+
 input[type="text"] {
     font-size: 1.2rem;
     padding: 8px;
@@ -76,8 +86,9 @@ input[type="text"] {
     background-color: #000000;
     color: #ffffff;
     font-family: stephcarly;
-    font-style: italic; 
+    font-style: italic;
 }
+
 label {
     color: #ffffff;
     font-size: 1.2rem;
@@ -85,4 +96,13 @@ label {
     display: block;
     font-family: stephcarly;
     font-style: italic;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+h1, #inputContainer, form, label, input {
+    display: none;
 }

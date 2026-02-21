@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hannah Lopez and Mathea Veloso">
+    <title>Guessing Game</title>
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <link rel="stylesheet" href="stylesheetGuessPerpetrator.css">
+</head>
+
+<body>
+<div id="game-screen">
+    <button class="backbutton" id="backButton" onclick="window.location.href='../index.html'">
+        Back to Aretta's Laptop
+    </button>
+
+    <img id="invisibleMan" src="../assets/invisible_man.png" alt="Invisible Man">
+</div>
+
+<script>
+    document.getElementById('game-screen').style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    document.getElementById('game-screen').style.position = 'fixed';
+    document.getElementById('game-screen').style.top = '0';
+    document.getElementById('game-screen').style.left = '0';
+    document.getElementById('game-screen').style.width = '100%';
+    document.getElementById('game-screen').style.height = '100%';
+    document.getElementById('game-screen').style.zIndex = '1000';
+    document.getElementById('game-screen').style.display = 'flex';
+    document.getElementById('game-screen').style.alignItems = 'center';
+    document.getElementById('game-screen').style.justifyContent = 'center';
+
+    // invisible man image
+    const invisibleMan = document.getElementById('invisibleMan');
+    invisibleMan.style.width = '100vw';
+    invisibleMan.style.height = '100vh';
+    invisibleMan.style.position = 'absolute';
+    invisibleMan.style.top = '0';
+    invisibleMan.style.left = '0';
+    invisibleMan.style.objectFit = 'cover';
+    invisibleMan.style.zIndex = '999';
+
+    // letters entered/actual guessing
+    let currentWord = '';
+    document.addEventListener('keydown', function(event) {
+        const key = event.key.toLowerCase();
+        if (key.length === 1) {
+            if (currentWord.length < 4) {
+                currentWord += key;
+                displayFloatingLetter(key);
+                if (currentWord.length === 4) {
+                    if (currentWord === 'cain') {
+                        alert('You have guessed the perpetrator. Time to seek justice.');
+                        document.getElementById('backButton').click();
+                    } else {
+                        alert('Try Again');
+                        currentWord = '';
+                    }
+                }
+            }
+        }
+    });
+    
+    function displayFloatingLetter(letter) {
+        const letterDiv = document.createElement('div');
+        letterDiv.textContent = letter.toUpperCase();
+        letterDiv.style.position = 'absolute';
+        letterDiv.style.fontSize = '72px';
+        letterDiv.style.color = 'red';
+        letterDiv.style.textShadow = '0 0 10px red, 0 0 20px red';
+        letterDiv.style.fontFamily = 'stephcarly';
+        letterDiv.style.fontStyle = 'italic';
+        letterDiv.style.left = (Math.random() * (window.innerWidth - 100)) + 'px';
+        letterDiv.style.top = (Math.random() * (window.innerHeight - 100)) + 'px';
+        letterDiv.style.animation = 'fadeOut 2s forwards';
+        letterDiv.style.pointerEvents = 'none';
+        letterDiv.style.zIndex = '1000';
+        document.getElementById('game-screen').appendChild(letterDiv);
+        setTimeout(() => letterDiv.remove(), 3000);
+    }
+</script>
+</body>
+</html>
