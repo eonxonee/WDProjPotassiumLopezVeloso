@@ -21,33 +21,64 @@ button{
 /*Grid Styling (letter classes will be renamed)*/
 .grid-container{
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
-    grid-template-rows: repeat(8, minmax(120px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(90px,1fr));
+    grid-template-rows: repeat(auto-fit, minmax(90px,1fr));
     width:100vw;
     height:100vh;
 }
 #A{
-    background-color:black;
     grid-column:span 2;
     grid-row:span 2;
+    min-width:0;
+    min-height:0;
+    overflow:hidden;
+    align-content:center;
+    justify-content:center;
+}
+#A img{
+    border-radius: 25px;
+    height:auto;
+    width:98%;
+    padding:2%;
 }
 #B{
     grid-column:span 4;
     grid-row:span 2;
-    background-color:red;
+    align-content:center;
+    justify-content:center;
+}
+#B img{
+    border-radius: 25px;
+    height:98%;
+    width:98%;
+    padding:2%;
 }
 #C{
     grid-row:3 / span 2;
     grid-column:span 4;
-    background-color:yellow;
+    background-color:rgba(255, 255, 255, 0.547);
+    border-radius: 25px;
+    width:98%;
+    height:98%;
+    margin:1%;
+    padding:1%;
+}
+#C img{
+    margin-top:2.5%;
+    animation: rotateDisk 3s linear infinite;
+    width:45%;
 }
 #D{
-    background-color:orange;
     grid-row: 5/span 2;
     grid-column: span 2;
 }
+#D img{
+    border-radius: 25px;
+    width:98%;
+    height:98%;
+    padding:2%;  
+}
 #E{
-    background-color: green;
     grid-row: 4;
     grid-column-end:-1;
 }
@@ -96,7 +127,23 @@ button{
     grid-row: 7;
     grid-column-end:-4;
 }
-@keyframes mymove {
+.smallApp{
+    border-radius: 15px;
+}
+.smallApp:hover{
+    transform:translateY(-10%);
+}
+.smallApp img{
+    width:90%;
+    height:80%;
+    margin-left:5%;
+    margin-right:5%;
+}
+.smallApp p{
+    font-size:0.75rem;
+    text-align:center;
+}
+@keyframes rotateDisk {
   100% {transform: rotate(360deg);}
 }
 
@@ -106,8 +153,8 @@ button{
     resize:both;
     left: 20%;
     top: 5%;
-    width: 650px;
-    height: 800px;
+    width: 200px;
+    height: 600px;
     min-height:300px;
     min-width: 480px;
     position:absolute;
@@ -116,27 +163,73 @@ button{
     background-color:aqua;
     resize: both;
 }
+#notesControls{
+    background-color:rgb(255, 0, 153);
+    height:100%;
+    width:15%;
+    float:left;
+}
 #notes.open{
     opacity: 1;
     pointer-events:auto;
 }
-
+#closeNotes{
+    position:absolute;
+    right:0;
+    top:0;
+}
+#previewNotes{
+    float:left;
+    background-color:yellow;
+    height:100%;
+    width:25%;
+    overflow:scroll;
+}
+#save{
+    position:absolute;
+    bottom:0;
+    right:0;
+    aspect-ratio:1/1;
+    width:10%;
+    background-color:transparent;
+}
+#save img{
+    width:100%;
+}
+#notesTitle{
+    width:100%;
+    font-size:2rem;
+}
+#openNotes{
+    height:100%;
+}
+#notesContent{
+    resize:none;
+    height:100%;
+    width:100%;
+}
+form{
+    height:100%;
+}
+.noted{
+    width:100%;
+    height:5em;
+}
+#add, #remove{
+    width:100%;
+    aspect-ratio:1/1;
+}
 /*footer styling*/
     /*-footer button*/
-@keyframes opacityChange {
-  from{opacity:0;}
-  to{opacity:1;}
-}
 .toggle-footer{
     z-index: 2;
     grid-row:8;
     grid-column-start: 1;
     grid-column-end:-1;
-    border-radius: 5% 5% 0 0 !important;
     transition: transform 0.67s ease; 
 }
 .toggle-footer.open{
-    transform:translateY(-200%);
+    transform:translateY(-180%);
 }
 .toggle-footer button{
     width: 100%;

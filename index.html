@@ -12,15 +12,15 @@
 
 <div class="main">
 <div class="grid-container">
-    <div id="A"class="smallApp"></div>
+    <div id="A"><img src='assets/calendarIcon.png'></div>
 
-    <div id="B"class="smallApp"></div>
+    <div id="B"><img src='assets/randImg.png'></div>
 
-    <div id="C"class="smallApp">  </div>
+    <div id="C"><img src='assets/recordDisk.png' id="rD"></div>
 
-    <div id="D" class="smallApp"></div>
+    <div id="D"><img src='assets/music1.jpg'><img src='assets/Files.png'></div>
 
-    <div id="E"class="smallApp"></div>
+    <div id="E"class="smallApp"><img src='assets/Files.png'><br><p>Files</p></div>
 
     <div id="F" class="smallApp"></div>
 
@@ -53,12 +53,15 @@
             <h1>Notes</h1>
         <button id="closeNotes" onclick="closeNotes()">X</button>
         </div>
-        <div id="notesControls">yes</div>
+        <div id="notesControls">
+            <button id="add" onclick="newNote()">+</button>
+            <button id="remove" onclick="removeNote()">-</button>
+        </div>
         <div id="previewNotes"></div>
         <div id=openNotes>
             <form id="notesInput">
             <input type="text" id="notesTitle" placeholder="New Note">
-            <textarea id="notesContent" placeholder="Pay attention. Be astonished. Tell about it; What have you discovered?"></textarea>
+            <textarea id="notesContent" placeholder="Pay attention. Be astonished. Tell about it. What have you discovered?"></textarea>
             <button id="save" onclick="saved(event)"><img src="assets/logonobg.png"></button>
             </form>
         </div>
