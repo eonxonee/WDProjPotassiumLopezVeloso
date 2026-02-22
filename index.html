@@ -7,13 +7,34 @@
     <link rel="icon" type="image/png" href="../assets/logo.png">
     <title>KALLERGIS CONUNDRUM</title>
     <link rel="stylesheet" href="main files/stylesheetIndex.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
 </head>
 <body onload="loaded()">
 <div class="main">
+    <audio src="assets/air.mp3" id="air"></audio>
+    <audio src="assets/introMusic.mp3" id="introAudio"></audio>
+    <audio src="assets/bgMusic.wav" id="bgMusic" loop></audio>
+    <audio src='assets/caseSlideAudio.mp3' id='caseSlide'></audio>
+    <div id='containerFile'>
+    <img src='assets/openingNote.png' id='caseFile'>
+    <p id='continue'>[Click to Continue]</p>
+    </div>
+    <h1 id="title">Kallergis <br>Conundrum</h1>
+    <h3 id='instruction'>[Click again to start]</h3>
+    <div id="blackscreen">
+    </div>
+    <img src='assets/laptop.png' id='laptop'>
+    <p id='enter'>[Investigate Laptop]</p>
     <div id='datesNstuff'>
     <h4 id="timeDetails">Time: <span id=time></span><br>
     Date: <span id=month>2</span>/<span id=day>18</span>/<span id="year">2019</span><br>
     Day: <span id=dayCounter>1</span></h4>
+    </div>
+    <div id="musicCtrl">
+        <audio src="assets/bgMusic.wav" id="bgMusic" loop></audio>
+        <button id="music"><h1>BG Music: <span id="musicStatus"> OFF</span></h1></button>
     </div>
 <div class="grid-container">
     <div id="A"><img src='assets/calendarIcon.png'></div>
@@ -28,11 +49,11 @@
 
     <div id="F" class="smallApp"><a href='main files/guessnumber.html'><img src='assets/Guess Number.png'></a><br><p>Guess the Number</p></div>
 
-    <div id="G"class="smallApp"><a href='main flies/guessword.html'><img src='assets/Aretta.png'></a><br><p>selfie.png</p></div>
+    <div id="G"class="smallApp"><img src='assets/Aretta.png'><br><p>selfie.png</p></div>
 
     <div id="H"class="smallApp"><img src='assets/trash.png'><br><p>Trashbin</p></div>
 
-    <div id="I" class="smallApp"><img src='assets/Guess Word.png'><br><p>Guess the Word</p></div>
+    <div id="I" class="smallApp"><a href='main files/guessword.html'><img src='assets/Guess Word.png'></a><br><p>Guess the Word</p></div>
 
     <div id="J" class="smallApp"><img src='assets/Schedule.png'><br><p>schedule.png</p></div>
 
@@ -45,22 +66,25 @@
     <div id="N" class="smallApp"><img src='assets/Chatty (Messaging).png'><br><p>Chatty</p></div>
     
     <div id="mask"></div>
-    <div class="toggle-footer" id="toggleFooter"><button id="footer-toggle-button" onclick="footerToggle()">//OPEN FOOTER//</button></div>
+    <div class="toggle-footer" id="toggleFooter"><button id="footer-toggle-button" onclick="footerToggle()"><p>Access Chorona Police station files</p></button></div>
 
 
     <div class="footer" id="footer">
-        <button id="notesBtn" onclick="footerClose()">NOTES</button>
-        <button id="guessperpBtn" onclick="window.location.href='main files/guessPerpetrator.html'">GUESS PERPETRATOR</button>
+        <div id='AL'><p>You are inspecting</p><br><h1>Aretta's Laptop</h1></div>
+        <div id='NT'class='footerstuff'><button id="notesBtn" onclick="footerClose()"><p>NOTES</p></button></div>
+        <div id='GP'class='footerstuff'><button id="guessperpBtn" onclick="window.location.href='main files/guessPerpetrator.html'"><p>GUESS PERPETRATOR</p></button></div>
+        <div id='S'class='footerstuff'><h1>Sources</h1></div>
+        <div id='KC'class='footerstuff'><h1>Kallergis Conundrum</h1><h4>©2025 Lopez, Veloso All Rights Reserved</h4><br><img src='assets/logonobg.png'></div>
     </div>
 </div>
     <div id="notes">
         <div id="notesheader">
             <h1>Notes</h1>
-        <button id="closeNotes" onclick="closeNotes()">X</button>
+        <button id="closeNotes" onclick="closeNotes()"><h1>X</h1></button>
         </div>
         <div id="notesControls">
-            <button id="add" onclick="newNote()">+</button>
-            <button id="remove" onclick="removeNote()">-</button>
+            <button id="add" onclick="newNote()"><h1>+</h1></button>
+            <button id="remove" onclick="removeNote()"><h1>-</h1></button>
         </div>
         <div id="previewNotes"></div>
         <div id=openNotes>

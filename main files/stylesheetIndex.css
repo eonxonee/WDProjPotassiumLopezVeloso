@@ -1,10 +1,20 @@
 /*General Styling*/
 @font-face{
-    
+    font-family: "fileFont";
+    src: url("../assets/STAMPWRITER-KIT\ 2.ttf");
+}
+.satisfy-regular {
+  font-family: "Satisfy", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 @keyframes showElement{
     from{ opacity:0;}
-    to{opacity:100;}
+    to{opacity:1;}
+}
+@keyframes hideElement{
+    from{ opacity:1;}
+    to{opacity:0;}
 }
 *{
     box-sizing: border-box;
@@ -23,6 +33,146 @@ button{
 }
 .main{
     position:relative;
+}
+/*Opening Screen*/
+#blackscreen{
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    background-color:black;
+    z-index:5;
+    opacity:1;
+}
+#blackscreen.disappear{
+    opacity:0;
+    pointer-events:none;
+}
+#blackscreen:hover{
+    cursor:pointer;
+}
+#title.disappear{
+    opacity:0;
+    pointer-events:none;
+}
+#introAudio, #bgMusic{
+    pointer-events:none;
+}
+#title{
+    position:absolute;
+    z-index:6;
+    color:#FFFFFF;
+    top: 40%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "fileFont", courier;
+    font-size:5rem;
+    text-align:center;
+    width:100vw;
+    height:100vh;
+    pointer-events:none;
+    opacity:1;
+    transition: opacity linear 0.67s;
+}
+#instruction{
+    position:absolute;
+    z-index:6;
+    color:#FFFFFF;
+    top: 70%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "fileFont", courier;
+    font-size:1.67rem;
+    text-align:center;
+    width:100vw;
+    height:100vh;
+    pointer-events:none;
+    opacity:0;
+    transition: opacity linear 0.67s;
+}
+#instruction.disappear{
+    opacity:0;
+
+}
+#instruction.appear{
+    opacity:1;
+    transition: opacity linear 0.67s;
+}
+#containerFile{
+    position:absolute;
+    display:flex;
+    justify-content:center;
+    width:100vw;
+    height:100vh;
+    pointer-events:none;
+}
+#caseFile{
+    position:absolute;
+    z-index:6;
+    height:95vh;
+    margin-left:auto;
+    margin-right:auto;
+    transform:translateY(-100%);
+    transition:transform 2s ease-out;
+    pointer-events:none;
+}
+#caseFile.in{
+    transform:translateY(0%);
+    transition-delay: 1.5s;
+    pointer-events:none;
+}
+#continue.show{
+    opacity:1;
+}
+#continue{
+    position:absolute;
+    z-index:6;
+    bottom:0;
+    font-size:1.5rem;
+    color:#FFFFFF;
+    font-family: "fileFont", courier;
+    width:100%;
+    text-align:center;
+    transition: opacity linear 0.67s;
+    opacity:0;
+}
+#enter{
+    position:absolute;
+    z-index:6;
+    font-size:1.5rem;
+    color:#FFFFFF;
+    font-family: "fileFont", courier;
+    width:100%;
+    transition: opacity linear 0.67s;
+    opacity:1;
+    text-align:center;
+    bottom:30%;
+    opacity:0;
+}
+#enter.show{
+    opacity:1;
+}
+#laptop{
+    position:absolute;
+    z-index:6;
+    width:100vw;
+    height:100%;
+    opacity:0;
+    transition: opacity linear 0.67s;
+    pointer-events:none;
+    transform:scale(1);
+}
+#laptop.reveal{
+    opacity:1;
+}
+@keyframes zoom{
+    from{transform:scale(100%);}
+    to{transform:scale(5000%);}
+}
+#laptop.reveal.zoom{
+    animation: zoom 1.5s ease-in forwards, hideElement 1.5s ease-in forwards;
+    animation-delay:2s;
 }
 /*Grid Styling*/
 .grid-container{
@@ -124,12 +274,16 @@ button{
     grid-row: 7;
     grid-column-end:-4;
 }
+.smallApp{
+    font-family: "Satisfy", cursive;
+    font-size:1rem;
+}
 .smallApp:hover{
     transform:translateY(-10%);
 }
 .smallApp img{
-    width:90%;
-    height:80%;
+    width:85%;
+    height:75%;
     margin-left:5%;
     margin-right:5%;
     border-radius:10px;
@@ -155,14 +309,16 @@ button{
     position:absolute;
     opacity:0;
     pointer-events:none;
-    background-color:aqua;
+    background-color:#FFFFFF;
     resize: both;
+    border:1px solid black;
+    font-family:"fileFont",courier;
 }
 #notesControls{
-    background-color:rgb(255, 0, 153);
     height:100%;
     width:15%;
     float:left;
+    border:1px solid black;
 }
 #notes.open{
     opacity: 1;
@@ -175,10 +331,19 @@ button{
 }
 #previewNotes{
     float:left;
-    background-color:yellow;
     height:100%;
     width:25%;
     overflow:scroll;
+    border-top:1px solid black;
+}
+#previewNotes button{
+    font-family:"fileFont",courier;
+}
+#notes button{
+    background-color:transparent;
+}
+#notes h1{
+    font-family:"fileFont",courier;
 }
 #save{
     position:absolute;
@@ -194,6 +359,8 @@ button{
 #notesTitle{
     width:100%;
     font-size:2rem;
+    border:1px solid black;
+    font-family:"fileFont",courier;
 }
 #openNotes{
     height:100%;
@@ -202,13 +369,20 @@ button{
     resize:none;
     height:100%;
     width:100%;
+    border:1px solid black;
+    font-family:"fileFont",courier;
 }
 form{
     height:100%;
+    border:1px solid black;
+}
+form ::placeholder{
+    font-family:"fileFont",courier;
 }
 .noted{
     width:100%;
     height:5em;
+    border:1px solid black;
 }
 #add, #remove{
     width:100%;
@@ -223,6 +397,7 @@ form{
     grid-column-start: 1;
     grid-column-end:-1;
     transition: transform 0.67s ease; 
+    position:relative;
 }
 .toggle-footer.open{
     transform:translateY(-180%);
@@ -231,7 +406,15 @@ form{
     width: 100%;
     height: 100%;
     background-image: url('../assets/footerbg.png');
+    background-size:cover;
     background-color:transparent;
+}
+.toggle-footer p{
+        font-family: "fileFont", courier;
+        text-align:left;
+        position:absolute;
+        font-size:1.5rem;
+        top:0.5em;
 }
 #mask{
     z-index:2;
@@ -245,35 +428,113 @@ form{
 }
 #mask.cover{
     opacity: 0.8;
+    pointer-events:auto;
 }
 /*-footer content*/
-.footer{
+.footer{  
     z-index:2;
     grid-row-start:-3;
     grid-row-end:-1;
     grid-column-start: 1;
     grid-column-end:-1;
-    background-color: white;
+    background-image: url('../assets/footercontentbg.png');
+    background-size:cover;
     transform: translateY(100%);
     transition: transform 0.67s ease;
+    display:flex;
+}
+.footer p{
+    font-family: "fileFont", courier;
 }
 .footer.reveal{
     transform: translateY(0%);
 }
-/*footer details*/
+.footer div{
+    background-image:url('../assets/paperbg.png');
+    background-size:100% 100%;
+    font-family: "fileFont", courier;
+}
+#AL{
+    flex-grow:1;
+    align-items:center;
+    justify-content:center;
+    padding-top:5%;
+    text-align:center;
+    transition:flex-grow linear 0.3s;
+    min-width:0;
+}
+#AL a{
+    text-decoration:none;
+    color:#000000;
+    font-size: 5cqi;
+    position:absolute;
+    text-align:center;
+}
+.footerstuff{
+    width:10%;
+    transition:flex-grow linear 0.3s;
+    min-width:0;
+}
+.footerstuff:hover{
+    flex-grow:2;
+    
+}
+#notesBtn, #guessperpBtn{
+    width:100%;
+    height:100%;
+    font-size:2rem;
+    background-color:transparent;
+}
+#S h1{
+    margin:10%;
+    text-align:center;
+}
+#KC{
+    text-align:center;
+    padding-top:2%;
+}
+#KC img{
+    aspect-ratio:1/1;
+    width:10%;
+    margin:0;
+}
+/*clock*/
 #datesNstuff{
     position:absolute;
     right:1%;
     top:5%;
     opacity:0;
-    transition: opacity 0.67s ease;
+    transition: opacity 0.67s linear;
     z-index:3;
     color:#FFFFFFFF;
+    font-family: "fileFont", courier;
+    text-align:right;
+    font-size:1.2rem;
 }
 #datesNstuff.show{
     opacity:1;
 }
-
+#musicCtrl{
+    position:absolute;
+    left:1%;
+    top:5%;
+    opacity:0;
+    transition: opacity 0.67s linear;
+    z-index:3;
+    color:#FFFFFF;
+    font-family: "fileFont", courier;
+    background-color:transparent;
+    text-align:right;
+    font-size:1.2rem;
+}
+#musicCtrl button{
+    background-color:transparent;
+    color:#FFFFFF;
+    font-family: "fileFont", courier;
+}
+#musicCtrl.show{
+    opacity:1;
+}
 
 /*mobile*/
 
@@ -375,5 +636,56 @@ form{
     grid-row: 7;
     grid-column-end:-4;
 }
+.footer{
+    background-image:url('../assets/paperbg.png');
+    background-size:100% 100%;
+    font-family: "fileFont", courier;
+    overflow:scroll;
+    display:flex;
+    flex-wrap:wrap;
+}  
+#AL{
+    flex-grow:1 !important;
 }
-
+.footer div{
+    height:67%;
+    width:100%;
+    text-align:center;
+}
+.footer div >*{
+    margin-left:auto;
+    margin-right:auto;
+}
+.footer button{
+    font-size:2rem;
+    background-color:transparent;
+}
+#notes{
+    width: 10%;
+}
+#title{
+    font-size:3rem;
+}
+#instruction{
+    font-size:1.5rem;
+    top:60%;
+    transform:translateY(-30%);
+    left: 50%;
+    transform: translateX(-50%);
+}
+#caseFile{
+    position:absolute;
+    z-index:6;
+    width:95%;
+    height:95%;
+    margin-left:auto;
+    margin-right:auto;
+    transform:translateY(-100%);
+    pointer-events:none;
+}
+#caseFile.in{
+    transition:transform 2s ease-out;
+    transform:translateY(0%);
+    transition-delay: 1.5s;
+}
+}

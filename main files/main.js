@@ -5,8 +5,58 @@ let previewNotes=document.getElementById('previewNotes');
 function loaded(){
     renderNotes();
     clock();
+    adjust();
+}
+//opening screen
+let blackScreen=document.getElementById('blackscreen');
+let instruction=document.getElementById('instruction');
+let caseFile=document.getElementById('caseFile');
+let title=document.getElementById('title');
+let next=document.getElementById('continue');
+let caseSlide=document.getElementById('caseSlide');
+let laptop=document.getElementById('laptop');
+let air=document.getElementById('air');
+let enter=document.getElementById('enter');
+
+blackScreen.addEventListener("click",start);
+    let clickCount=0;
+function start(){
+    clickCount++
+    console.log(clickCount);
+    if(clickCount==1){
+        introAudio.play();
+        introAudio.volume=0.5;
+        instruction.classList.add("appear");
+    }
+    if(clickCount==2){
+        instruction.classList.remove("appear");
+        title.classList.add('disappear');
+        caseFile.classList.add("in");
+        setTimeout(sfxPlay,1500);
+        function sfxPlay(){
+        caseSlide.play();
+        }
+        setTimeout(shownext,4000);
+        function shownext(){
+            next.classList.add('show');
+        }
+    }
+    if(clickCount==3){
+        caseFile.classList.remove("in");
+        next.classList.remove('show');
+        caseSlide.play();
+        laptop.classList.add('reveal');
+        enter.classList.add('show');
+    }
+    if(clickCount==4){
+        laptop.classList.add('zoom');
+        blackScreen.classList.add('disappear');
+        air.play();
+        enter.classList.remove('show');
+    }
 
 }
+
 
 //clock 
 function clock(){
@@ -25,7 +75,7 @@ function clock(){
     var newYear=localStorage.getItem("year");
     
     if(newDay){document.getElementById("day").innerHTML=newDay;}
-    if(newDayCounter){document.getElementById("dayCounter").innerHTML=newDay;}
+    if(newDayCounter){document.getElementById("dayCounter").innerHTML=newDayCounter;}
     if(newMonth){document.getElementById("month").innerHTML=newMonth;}
     if(newYear){document.getElementById("year").innerHTML=newYear;}
 
@@ -67,13 +117,26 @@ function addZero(i){
     if(i<10){i="0"+i}
     return i;
 }
-
+//BG MUSIC TEMP CTRL
+let bgMusic=document.getElementById('bgMusic');
+let soundBtn=document.getElementById("musicCtrl");
+soundBtn.addEventListener("click", bgMusicControls);
+function bgMusicControls(){
+    if(!bgMusic.paused){
+        bgMusic.pause();
+        document.getElementById("musicStatus").innerHTML=" OFF";
+    }else{
+        bgMusic.play();
+        document.getElementById("musicStatus").innerHTML=" ON";
+    }
+}
 //footerfx
 function footerToggle(){
     document.getElementById("toggleFooter").classList.toggle("open");
     document.getElementById("footer").classList.toggle("reveal");
     document.getElementById("mask").classList.toggle("cover");
     document.getElementById('datesNstuff').classList.toggle('show');
+    document.getElementById('musicCtrl').classList.toggle('show');
     
 }
 function footerClose(){
@@ -133,8 +196,6 @@ mobilemove.addEventListener('touchmove', function(e){
     movenote.style.left=(tLoc.pageX-offsetSide) + 'px';
     movenote.style.top=(tLoc.pageY-offsetTop) + 'px';
 });
-
-
 
 function closeNotes(){
     document.getElementById("notes").classList.remove("open");
@@ -228,4 +289,21 @@ function removeNote(){
         }
     }
     }
+}
+
+
+function adjust(){
+let footerstuff=document.querySelectorAll('.footerstuff');
+let AL=document.getElementById('AL');
+footerstuff.forEach((elmt)=>{
+    elmt.addEventListener('mouseenter', ()=>
+    {
+        AL.style.flexGrow='0';
+        AL.style.width='10%';
+    })
+    elmt.addEventListener('mouseleave', ()=>
+    {
+        AL.style.flexGrow='1';
+    })
+})
 }
