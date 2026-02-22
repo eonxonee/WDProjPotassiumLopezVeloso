@@ -136,6 +136,7 @@ button{
     text-align:center;
     transition: opacity linear 0.67s;
     opacity:0;
+    pointer-events:none;
 }
 #enter{
     position:absolute;
@@ -485,9 +486,10 @@ form ::placeholder{
     font-size:2rem;
     background-color:transparent;
 }
-#S h1{
+#S h1, #S a{
     margin:10%;
     text-align:center;
+    color:#000000;
 }
 #KC{
     text-align:center;
