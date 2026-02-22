@@ -22,7 +22,7 @@ button{
 .grid-container{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(90px,1fr));
-    grid-template-rows: repeat(auto-fit, minmax(90px,1fr));
+    grid-template-rows: repeat(8, minmax(90px,1fr));
     width:100vw;
     height:100vh;
 }
@@ -83,52 +83,40 @@ button{
     grid-column-end:-1;
 }
 #F{
-    background-color: blue;
     grid-row: 5;
     grid-column-end:-1;
 }
 #G{
-    background-color: purple;
     grid-row: 6;
     grid-column-end:-1;
 }
 #H{
-    background-color: pink;
     grid-row: 7;
     grid-column-end:-1;
 }
 #I{
-    background-color: aqua;
     grid-row: 5;
     grid-column-end:-2;
 }
 #J{
-    background-color: rgb(7, 92, 92);
     grid-row: 6;
     grid-column-end:-2;
 }
 #K{
-    background-color: rgb(187, 0, 255);
     grid-row: 7;
     grid-column-end:-2;
 }
 #L{
-    background-color: rgb(255, 142, 142);
     grid-row: 6;
     grid-column-end:-3;
 }
 #M{
-    background-color: rgb(147, 210, 210);
     grid-row: 7;
     grid-column-end:-3;
 }
 #N{
-    background-color: rgb(191, 255, 122);
     grid-row: 7;
     grid-column-end:-4;
-}
-.smallApp{
-    border-radius: 15px;
 }
 .smallApp:hover{
     transform:translateY(-10%);
@@ -138,6 +126,7 @@ button{
     height:80%;
     margin-left:5%;
     margin-right:5%;
+    border-radius:10px;
 }
 .smallApp p{
     font-size:0.75rem;
@@ -223,7 +212,8 @@ form{
     /*-footer button*/
 .toggle-footer{
     z-index: 2;
-    grid-row:8;
+    grid-row-start: -2;
+    grid-row-end:-1;
     grid-column-start: 1;
     grid-column-end:-1;
     transition: transform 0.67s ease; 
@@ -252,7 +242,8 @@ form{
 /*-footer content*/
 .footer{
     z-index:2;
-    grid-row:7/span 2;
+    grid-row-start:-3;
+    grid-row-end:-1;
     grid-column-start: 1;
     grid-column-end:-1;
     background-color: white;
