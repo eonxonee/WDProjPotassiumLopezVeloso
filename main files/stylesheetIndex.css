@@ -220,7 +220,6 @@ form{
     grid-column-start: 1;
     grid-column-end:-1;
     transition: transform 0.67s ease; 
-    background-image: url('')
 }
 .toggle-footer.open{
     transform:translateY(-180%);
@@ -228,7 +227,8 @@ form{
 .toggle-footer button{
     width: 100%;
     height: 100%;
-    background-color: #eecec2;
+    background-image: url('../assets/footerbg.png');
+    background-color:transparent;
 }
 #mask{
     z-index:2;
@@ -269,5 +269,108 @@ form{
 }
 #datesNstuff.show{
     opacity:1;
+}
+
+
+/*mobile*/
+
+@media screen and (max-width: 540px){
+.grid-container{
+    display:grid;
+    grid-template-columns: repeat(6, minmax(108px,1fr));
+    grid-template-rows: repeat(8, minmax(90px,1fr));
+    }
+#A{
+    grid-column:span 2;
+    grid-row:span 2;
+    min-width:0;
+    min-height:0;
+    overflow:hidden;
+    align-content:center;
+    justify-content:center;
+}
+#A img{
+    border-radius: 25px;
+    height:auto;
+    width:98%;
+    padding:2%;
+}
+#B{
+    grid-column:span 3;
+    grid-row:span 2;
+    align-content:center;
+    justify-content:center;
+}
+#B img{
+    border-radius: 25px;
+    height:98%;
+    width:98%;
+    padding:2%;
+}
+#C{
+    grid-row:3 / span 2;
+    grid-column:span 3;
+    background-color:rgba(255, 255, 255, 0.547);
+    border-radius: 25px;
+    width:98%;
+    height:98%;
+    margin:1%;
+    padding:1%;
+}
+#C img{
+    margin-top:2.5%;
+    animation: rotateDisk 3s linear infinite;
+    width:45%;
+}
+#D{
+    grid-row: 5/span 2;
+    grid-column: span 2;
+}
+#D img{
+    border-radius: 25px;
+    width:98%;
+    height:98%;
+    padding:2%;  
+}
+#E{
+    grid-row: 4;
+    grid-column-end:-2;
+}
+#F{
+    grid-row: 5;
+    grid-column-end:-2;
+}
+#G{
+    grid-row: 6;
+    grid-column-end:-2;
+}
+#H{
+    grid-row: 7;
+    grid-column-end:-2;
+}
+#I{
+    grid-row: 5;
+    grid-column-end:-3;
+}
+#J{
+    grid-row: 6;
+    grid-column-end:-3;
+}
+#K{
+    grid-row: 7;
+    grid-column-end:-3;
+}
+#L{
+    grid-row: 6;
+    grid-column-end:-4;
+}
+#M{
+    grid-row: 7;
+    grid-column-end:-4;
+}
+#N{
+    grid-row: 7;
+    grid-column-end:-5;
+}
 }
 

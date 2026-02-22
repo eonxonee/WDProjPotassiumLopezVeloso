@@ -70,10 +70,10 @@ function addZero(i){
 
 //footerfx
 function footerToggle(){
-    document.getElementById("toggleFooter").classList.add("open");
-    document.getElementById("footer").classList.add("reveal");
-    document.getElementById("mask").classList.add("cover");
-    document.getElementById('datesNstuff').classList.add('show');
+    document.getElementById("toggleFooter").classList.toggle("open");
+    document.getElementById("footer").classList.toggle("reveal");
+    document.getElementById("mask").classList.toggle("cover");
+    document.getElementById('datesNstuff').classList.toggle('show');
     
 }
 function footerClose(){
@@ -117,6 +117,24 @@ function dragNote(notes){
         document.onmousemove=null;
     }
 }
+let mobilemove=document.getElementById('notesheader');
+let movenote=document.getElementById('notes');
+let offsetSide=0;
+let offsetTop=0;
+
+mobilemove.addEventListener('touchstart', function(e){
+    var tLoc=e.targetTouches[0];
+    offsetSide=tLoc.pageX-movenote.offsetLeft;
+    offsetTop=tLoc.pageY-movenote.offsetTop;
+});
+
+mobilemove.addEventListener('touchmove', function(e){
+    var tLoc=e.targetTouches[0];
+    movenote.style.left=(tLoc.pageX-offsetSide) + 'px';
+    movenote.style.top=(tLoc.pageY-offsetTop) + 'px';
+});
+
+
 
 function closeNotes(){
     document.getElementById("notes").classList.remove("open");
