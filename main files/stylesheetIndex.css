@@ -1,4 +1,7 @@
 /*General Styling*/
+@font-face{
+    
+}
 @keyframes showElement{
     from{ opacity:0;}
     to{opacity:100;}
@@ -277,26 +280,25 @@ form{
 @media screen and (max-width: 540px){
 .grid-container{
     display:grid;
-    grid-template-columns: repeat(6, minmax(108px,1fr));
-    grid-template-rows: repeat(8, minmax(90px,1fr));
+    grid-template-columns: repeat(5, minmax(50px,1fr));
+    grid-template-rows: repeat(8, minmax(30px,1fr));
     }
 #A{
     grid-column:span 2;
     grid-row:span 2;
-    min-width:0;
-    min-height:0;
     overflow:hidden;
     align-content:center;
     justify-content:center;
 }
 #A img{
     border-radius: 25px;
-    height:auto;
+    height:98%;
     width:98%;
     padding:2%;
 }
 #B{
-    grid-column:span 3;
+    grid-column-start:3;
+    grid-column-end:-1;
     grid-row:span 2;
     align-content:center;
     justify-content:center;
@@ -316,6 +318,7 @@ form{
     height:98%;
     margin:1%;
     padding:1%;
+    
 }
 #C img{
     margin-top:2.5%;
@@ -334,43 +337,43 @@ form{
 }
 #E{
     grid-row: 4;
-    grid-column-end:-2;
+    grid-column-end:-1;
 }
 #F{
     grid-row: 5;
-    grid-column-end:-2;
+    grid-column-end:-1;
 }
 #G{
     grid-row: 6;
-    grid-column-end:-2;
+    grid-column-end:-1;
 }
 #H{
     grid-row: 7;
-    grid-column-end:-2;
+    grid-column-end:-1;
 }
 #I{
     grid-row: 5;
-    grid-column-end:-3;
+    grid-column-end:-2;
 }
 #J{
     grid-row: 6;
-    grid-column-end:-3;
+    grid-column-end:-2;
 }
 #K{
     grid-row: 7;
-    grid-column-end:-3;
+    grid-column-end:-2;
 }
 #L{
     grid-row: 6;
-    grid-column-end:-4;
+    grid-column-end:-3;
 }
 #M{
     grid-row: 7;
-    grid-column-end:-4;
+    grid-column-end:-3;
 }
 #N{
     grid-row: 7;
-    grid-column-end:-5;
+    grid-column-end:-4;
 }
 }
 
