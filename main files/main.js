@@ -36,17 +36,15 @@ function start(){
         function sfxPlay(){
         caseSlide.play();
         }
-        setTimeout(shownext,4000);
-        function shownext(){
             next.classList.add('show');
-        }
     }
-    if(clickCount==3){
+    else if(clickCount===3){
         caseFile.classList.remove("in");
         next.classList.remove('show');
         caseSlide.play();
         laptop.classList.add('reveal');
         enter.classList.add('show');
+        next.classList.add('remove');
     }
     if(clickCount==4){
         laptop.classList.add('zoom');
