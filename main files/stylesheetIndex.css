@@ -137,6 +137,8 @@ button{
     transition: opacity linear 0.67s;
     opacity:0;
     pointer-events:none;
+    transition:opacity 2s;
+    transition-delay:1s;
 }
 #enter{
     position:absolute;
