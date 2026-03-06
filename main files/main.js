@@ -143,6 +143,7 @@ function footerClose(){
     document.getElementById("mask").classList.remove("cover");
     document.getElementById('datesNstuff').classList.remove('show');
     document.getElementById("notes").classList.add("open");
+    document.getElementById('musicCtrl').classList.remove('show');
 }
 
 //notes feature

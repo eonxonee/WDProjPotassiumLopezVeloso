@@ -190,26 +190,22 @@ button{
     grid-row:span 2;
     min-width:0;
     min-height:0;
-    overflow:hidden;
     align-content:center;
     justify-content:center;
 }
 #A img{
     border-radius: 25px;
-    height:auto;
-    width:98%;
+    height:100%;
+    width:100%;
     padding:2%;
 }
 #B{
     grid-column:span 4;
     grid-row:span 2;
-    align-content:center;
-    justify-content:center;
 }
 #B img{
-    border-radius: 25px;
-    height:98%;
-    width:98%;
+    height:100%;
+    width:100%;
     padding:2%;
 }
 #C{
