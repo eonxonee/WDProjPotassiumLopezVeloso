@@ -6,9 +6,9 @@
    * Delete: User can delete new or previous notes by clicking 'Delete' button
      > Updated wireframe: https://www.canva.com/design/DAG3KVnLVYY/T15bPD2_kiuGvoqs9C1Ubw/edit
 ## Other Modifications to be Made:
-   * Add missing photos/video/file app
-   * Create Settings, Mail, and Trashbin apps
-   * Fix Background Music settings
+   * Add photos/video/file app (will contain subtle clues for puzzles)
+   * Create Settings (allows User to modify interface of Aretta's laptop), Mail (contains fake chats to gather evidence and sends messages to characters), and Trashbin (allows User to recover deleted evidence/clues) apps
+   * Fix Background Music settings (allows user to switch between melodies
 
 ---
 
