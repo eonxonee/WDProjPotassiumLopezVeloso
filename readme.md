@@ -1,3 +1,16 @@
+# FINAL MODIFICATION PROPOSAL
+## CRUD Process
+   * Create: User creates a 'note' in the Notes app
+   * Read: System saves created note into localStorage when user creates a new 'note'
+   * Update: User can modify previous notes by clicking note title and editing text
+   * Delete: User can delete new or previous notes by clicking 'Delete' button
+     > Updated wireframe: https://www.canva.com/design/DAG3KVnLVYY/T15bPD2_kiuGvoqs9C1Ubw/edit
+## Other Modifications to be Made:
+   * Add missing photos/video/file app
+   * Create Settings, Mail, and Trashbin apps
+   * Fix Background Music settings
+
+---
 
 # Q3 Proposal Update
 ## Final Title: Kallergis Conundrum
