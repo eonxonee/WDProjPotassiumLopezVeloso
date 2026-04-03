@@ -395,7 +395,6 @@ function removeNote(){
     }
 }
 
-
 function adjust(){
 let footerstuff=document.querySelectorAll('.footerstuff');
 let AL=document.getElementById('AL');
