@@ -42,6 +42,8 @@ button{
     background-color:black;
     z-index:5;
     opacity:1;
+    transition:opacity 0.67s;
+    transition-delay: 2.5s;
 }
 #blackscreen.disappear{
     opacity:0;
@@ -116,6 +118,7 @@ button{
     transform:translateY(-100%);
     transition:transform 2s ease-out;
     pointer-events:none;
+    z-index:10;
 }
 #caseFile.in{
     transform:translateY(0%);
@@ -150,24 +153,39 @@ button{
     transition: opacity linear 0.67s;
     opacity:1;
     text-align:center;
-    bottom:30%;
+    bottom:25%;
     opacity:0;
 }
 #enter.show{
     opacity:1;
 }
 #laptop{
-    position:absolute;
+    position:relative;
     z-index:6;
-    width:100vw;
-    height:100%;
+    margin-left:auto;
+    margin-right:auto;
+    aspect-ratio: 1/1;
     opacity:0;
+    height:50%;
+    top:25%;
     transition: opacity linear 0.67s;
+    transition: transform 0.67s;
     pointer-events:none;
     transform:scale(1);
 }
 #laptop.reveal{
     opacity:1;
+}
+#laptop.zoom{
+    transform: scale(7s);
+}
+#lContain{
+    position:absolute;
+    display:flex;
+    justify-items:center;
+    width:100%;
+    height:100%;
+    pointer-events:none;
 }
 @keyframes zoom{
     from{transform:scale(100%);}
@@ -217,11 +235,80 @@ button{
     height:98%;
     margin:1%;
     padding:1%;
+    display:flex;
 }
-#C img{
-    margin-top:2.5%;
-    animation: rotateDisk 3s linear infinite;
-    width:45%;
+#music1div{
+    display:flex;
+    flex-direction:column;
+    justify-items:center;
+    text-align:center;
+    margin:1%;
+    height:100%;
+    border-radius:10px;
+    cursor:default;
+}
+#music1div i{
+    display:inline-flex;
+    margin-left:10px;
+    margin-top:2px;
+}
+#music1div i:hover{
+    cursor:pointer;
+}
+#rDiv{
+   display:flex;
+   align-items:center;
+   width:50%;
+}
+#rD{
+    aspect-ratio:1/1;
+    width:100%;
+    animation: rotateDisk linear 3s infinite;
+    animation-play-state: paused;
+}
+#rD.plays{
+    animation-play-state: running;
+}
+#album{
+    border-radius:10px;
+    width:190px;
+    height:100px;
+}
+#song-title{
+    margin-bottom:0px;
+    font-size:1.2rem;
+    font-family:"Satisfy";
+}
+#artist{
+    font-size:0.6rem;
+    font-family:"Satisfy";
+}
+#tContain{
+    width:100%;
+}
+#timeline{
+    -webkit-appearance: none;
+    overflow:visible;
+    width:100%;
+    height:1rem;
+    background-color:transparent;
+}
+#timeline::-webkit-slider-runnable-track{
+    -webkit-appearance: none;
+    width:100%;
+    height:0.2rem;
+    border-radius:10px;
+    background-color:rgb(0, 0, 0);
+}
+#timeline::-webkit-slider-thumb {
+    position:relative;
+   -webkit-appearance: none;
+   background-color:black;
+   border-radius:50%;
+   border: 2px solid #ffffff;
+   height: 1rem;
+   width: 1rem;    
+   top:-6px;
 }
 #D{
     grid-row: 5/span 2;
@@ -297,7 +384,7 @@ button{
 
 /*NOTES FEATURE*/
 #notes{
-    z-index: 1;
+    z-index: 3;
     resize:both;
     left: 20%;
     top: 5%;
@@ -428,6 +515,13 @@ form ::placeholder{
 #mask.cover{
     opacity: 0.8;
     pointer-events:auto;
+}
+#chronora{
+    height:80%;
+    position:absolute;
+    bottom:0;
+    right:0;
+
 }
 /*-footer content*/
 .footer{  
@@ -579,12 +673,6 @@ form ::placeholder{
     height:98%;
     margin:1%;
     padding:1%;
-    
-}
-#C img{
-    margin-top:2.5%;
-    animation: rotateDisk 3s linear infinite;
-    width:45%;
 }
 #D{
     grid-row: 5/span 2;
@@ -689,3 +777,4 @@ form ::placeholder{
     transition-delay: 1.5s;
 }
 }
+lContain

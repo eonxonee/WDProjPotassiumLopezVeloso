@@ -115,32 +115,136 @@ function addZero(i){
     if(i<10){i="0"+i}
     return i;
 }
-//BG MUSIC TEMP CTRL
-let bgMusic=document.getElementById('bgMusic');
-let soundBtn=document.getElementById("musicCtrl");
-soundBtn.addEventListener("click", bgMusicControls);
-function bgMusicControls(){
-    if(!bgMusic.paused){
-        bgMusic.pause();
-        document.getElementById("musicStatus").innerHTML=" OFF";
-    }else{
-        bgMusic.play();
-        document.getElementById("musicStatus").innerHTML=" ON";
+//BG MUSIC
+const pLpS=document.getElementById("play_pause");
+const prev=document.getElementById("prev");
+const nextS=document.getElementById("next");
+const timeline=document.getElementById("timeline");
+const disc=document.getElementById("rD");
+
+const album=document.getElementById("album");
+const songTitle=document.getElementById("song-title");
+const songArtist=document.getElementById("artist");
+
+const playlist=[
+    {
+        image: "assets/music1.jpg",
+        title: "2:am",
+        artist: "Chillpeach",
+        audio: "assets/2am.mp3"
+    },
+    {
+        image: "assets/music1.jpg",
+        title: "Violin Sonata in D major",
+        artist: "Jean-Marie Leclair",
+        audio: "assets/Un poco andante.mp3"
+    },
+    {
+        image: "assets/music1.jpg",
+        title: "『3a.m』",
+        artist: "TOGITO",
+        audio: "assets/3a.m.mp3"
+    },
+    {
+        image: "assets/music1.jpg",
+        title: "4:00am",
+        artist: "Taeko Ohnuki",
+        audio: "assets/4am.mp3"
+    },
+]
+
+
+const audio=document.createElement("audio");
+let playlistQueue=0;
+
+changeSong();
+
+function changeSong(){
+    const song=playlist[playlistQueue];
+    album.src=song.image;
+    songTitle.innerText=song.title;
+    songArtist.innerText=song.artist;
+    audio.src=song.audio;
+    audio.onloadedmetadata=function(){
+        timeline.value=0;
+        timeline.max=audio.duration;
     }
 }
+
+pLpS.addEventListener("click", function(){
+    if(!audio.paused){
+        audio.pause();
+        pLpS.classList.remove("fa-pause");
+        pLpS.classList.add("fa-play");
+        disc.classList.remove("plays");
+    }else{
+        audio.play();
+        pLpS.classList.add("fa-pause");
+        pLpS.classList.remove("fa-play");
+        disc.classList.add("plays");
+
+    }
+});
+
+prev.addEventListener("click", function(){
+    if(playlistQueue==0 && !audio.paused){
+        playlistQueue=playlist.length-1;
+        changeSong();
+        audio.play();
+    }else if(playlistQueue!=0&&!audio.paused){
+        playlistQueue--;
+        changeSong();
+        audio.play();
+    }else if(playlistQueue==0 && audio.paused){
+        playlistQueue=playlist.length-1;
+        changeSong();
+        audio.pause();
+    }else if(playlistQueue!=0&&audio.paused){
+        playlistQueue--;
+        changeSong();
+        audio.pause();
+    }
+});
+
+nextS.addEventListener("click", function(){
+    if(playlistQueue==playlist.length-1&& !audio.paused){
+        playlistQueue=0;
+        changeSong();
+        audio.play();
+    }else if(playlistQueue!=playlist.length-1&&!audio.paused){
+        playlistQueue++;
+        changeSong();
+        audio.play();
+    }else if(playlistQueue==playlist.length-1 && audio.paused){
+        playlistQueue=0;
+        changeSong();
+        audio.pause();
+    }else if(playlistQueue!=playlist.length-1&&audio.paused){
+        playlistQueue++;
+        changeSong();
+        audio.pause();
+    }
+});
+
+timeline.addEventListener("change", function(){
+    audio.currentTime=timeline.value;
+});
+
+function timelineMove(){
+    timeline.value=audio.currentTime;
+}
+setInterval(timelineMove, 1000);
+
 //footerfx
 function footerToggle(){
     document.getElementById("toggleFooter").classList.toggle("open");
     document.getElementById("footer").classList.toggle("reveal");
     document.getElementById("mask").classList.toggle("cover");
     document.getElementById('datesNstuff').classList.toggle('show');
-    document.getElementById('musicCtrl').classList.toggle('show');
-    
 }
 function footerClose(){
     document.getElementById("toggleFooter").classList.remove("open");
     document.getElementById("footer").classList.remove("reveal");
-    document.getElementById("mask").classList.remove("cover");
     document.getElementById('datesNstuff').classList.remove('show');
     document.getElementById("notes").classList.add("open");
     document.getElementById('musicCtrl').classList.remove('show');
@@ -198,6 +302,7 @@ mobilemove.addEventListener('touchmove', function(e){
 
 function closeNotes(){
     document.getElementById("notes").classList.remove("open");
+    document.getElementById('mask').classList.remove('cover');
 }
 
 //notes main functions
@@ -306,3 +411,4 @@ footerstuff.forEach((elmt)=>{
     })
 })
 }
+

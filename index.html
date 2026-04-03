@@ -10,12 +10,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8840769448.js" crossorigin="anonymous"></script>
 </head>
 <body onload="loaded()">
 <div class="main">
     <audio src="assets/air.mp3" id="air"></audio>
     <audio src="assets/introMusic.mp3" id="introAudio"></audio>
-    <audio src="assets/bgMusic.wav" id="bgMusic" loop></audio>
     <audio src='assets/caseSlideAudio.mp3' id='caseSlide'></audio>
     <div id='containerFile'>
     <img src='assets/openingNote.png' id='caseFile'>
@@ -25,23 +25,34 @@
     <h3 id='instruction'>[Click again to start]</h3>
     <div id="blackscreen">
     </div>
-    <img src='assets/laptop.png' id='laptop'>
+    <div id="lContain">
+    <img src="assets/laptopsprite.png" id='laptop'>
+    </div>
     <p id='enter'>[Investigate Laptop]</p>
     <div id='datesNstuff'>
     <h4 id="timeDetails">Time: <span id=time></span><br>
     Date: <span id=month>2</span>/<span id=day>18</span>/<span id="year">2019</span><br>
     Day: <span id=dayCounter>1</span></h4>
     </div>
-    <div id="musicCtrl">
-        <audio src="assets/bgMusic.wav" id="bgMusic" loop></audio>
-        <button id="music"><h1>BG Music: <span id="musicStatus"> OFF</span></h1></button>
-    </div>
 <div class="grid-container">
     <div id="A"><img src='assets/calendarIcon.png'></div>
 
     <div id="B"><img src='assets/randImg.png'></div>
 
-    <div id="C"><img src='assets/recordDisk.png' id="rD"></div>
+    <div id="C">
+        <div id="rDiv"><img src='assets/recordDisk.png' id="rD"></div>
+        <div id="music1div">
+            <img src="assets/music1.jpg" id="album">
+            <h1 id="song-title">Title</h1>
+            <p id="artist">Artist</p>
+            <div id="tContain"><input type="range" id="timeline"></div>
+            <div id="ctrl">
+            <i class="fa-solid fa-backward-step" id="prev"></i>
+            <i class="fa-solid fa-play" id="play_pause"></i>
+            <i class="fa-solid fa-forward-step" id="next"></i>
+            </div>
+        </div>
+    </div>
 
     <div id="D"><img src='assets/music1.jpg'></div>
 
@@ -66,7 +77,7 @@
     <div id="N" class="smallApp"><img src='assets/Chatty (Messaging).png'><br><p>Chatty</p></div>
     
     <div id="mask"></div>
-    <div class="toggle-footer" id="toggleFooter"><button id="footer-toggle-button" onclick="footerToggle()"><p>Access Chorona Police station files</p></button></div>
+    <div class="toggle-footer" id="toggleFooter"><button id="footer-toggle-button" onclick="footerToggle()"><p>Access Chorona Police station files</p><img src="assets/chonoraLogo.png" id="chronora"></button></div>
 
 
     <div class="footer" id="footer">
@@ -101,4 +112,3 @@
 <script src="main files/main.js"></script>
 </body>
 </html>
-continue
