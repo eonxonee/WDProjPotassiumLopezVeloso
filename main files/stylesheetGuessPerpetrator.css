@@ -1,10 +1,11 @@
 @font-face {
-    font-family: "stephcarly";
-    src: url("../assets/StephCarlyDemo-Regular.ttf");
+    font-family:"fade";
+    src:url('../assets/HalfFaded.ttf');
 }
-
+*{
+    font-family:"fade";
+}
 body {
-    font-family: stephcarly;
     font-style: italic;
     color: #ffffff;
     background-color: #000000;
@@ -14,10 +15,11 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    height:100vh;
+    width:100vw;
 }
 
 .backbutton {
-    font-family: stephcarly;
     font-style: italic;
     position: absolute;
     top: 5%;
@@ -30,7 +32,6 @@ h1 {
     color: #ffffff;
     text-align: center;
     font-size: xxx-large;
-    font-family: stephcarly;
     font-style: italic;
     margin-top: 80px;
     text-shadow: 0 4px 10px rgba(192, 0, 0, 0.95);
@@ -55,7 +56,6 @@ button {
     font-size: 1rem;
     cursor: pointer;
     margin-top: 10px;
-    font-family: stephcarly;
     font-style: italic;
 }
 
@@ -74,15 +74,6 @@ button:disabled {
     margin-top: 20px;
     font-weight: bold;
 }
-
-#invisibleMan {
-    width: 200px;
-    height: 200px;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-}
-
 input[type="text"] {
     font-size: 1.2rem;
     padding: 8px;
@@ -93,7 +84,6 @@ input[type="text"] {
     margin-right: 10px;
     background-color: #000000;
     color: #ffffff;
-    font-family: stephcarly;
     font-style: italic;
 }
 
@@ -102,7 +92,6 @@ label {
     font-size: 1.2rem;
     margin-bottom: 10px;
     display: block;
-    font-family: stephcarly;
     font-style: italic;
 }
 
@@ -113,4 +102,45 @@ label {
 
 h1, #inputContainer, form, label, input {
     display: none;
+}
+#invisibleMan{
+    position:absolute;
+    bottom:0px;
+    width:670px;
+    height:95%;
+    opacity:0.8;
+}
+#dialogue{
+    background-image:url('../assets/footerbg.png');
+    background-size:cover;
+    height:25%;
+    z-index:2;
+    width:95%;
+    position:fixed;
+    bottom:5px;
+    border-radius:10px;
+    opacity:0;
+    transition:opacity 1s;
+}
+#speakerName{
+    z-index:3;
+    width:30%;
+    height:10%;
+    background-color:rgba(255, 255, 255, 0.352);
+    position:fixed;
+    left: 5%;
+    bottom:17%;
+    margin-bottom:10px;
+    border-radius:10px;
+    text-align:center;
+    opacity:0;
+    transition:opacity 1s;
+}
+#speakerName h2{
+    font-size:4rem;
+    color:black;
+    margin-top:0px;
+}
+#dialogue.show, #speakerName.show{
+    opacity:1;
 }

@@ -8,37 +8,38 @@
     <link rel="icon" type="image/png" href="../assets/logo.png">
     <link rel="stylesheet" href="stylesheetGuessPerpetrator.css">
 </head>
-
 <body>
 <div id="game-screen">
     <button class="backbutton" id="backButton" onclick="window.location.href='../index.html'">
-        Back to Aretta's Laptop
+        Back to Aretta<span style="font-family:sans-serif">'</span>s Laptop
     </button>
 
     <img id="invisibleMan" src="../assets/guessPerpMan.png" alt="Invisible Man">
+    <div id="speakerName"><h2>???</h2></div>
+    <div id="dialogue"><p>So...</p></div>
 </div>
 
 <script>
+    let screen=document.getElementById('game-screen');
+    let clickCount=0;
+    screen.addEventListener("click", function(){
+        clickCount++;
+        console.log(clickCount)
+        if(clickCount==1){
+            document.getElementById("speakerName").classList.add("show");
+            document.getElementById("dialogue").classList.add("show");
+        }
+    });
     document.getElementById('game-screen').style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
     document.getElementById('game-screen').style.position = 'fixed';
     document.getElementById('game-screen').style.top = '0';
     document.getElementById('game-screen').style.left = '0';
     document.getElementById('game-screen').style.width = '100%';
     document.getElementById('game-screen').style.height = '100%';
-    document.getElementById('game-screen').style.zIndex = '1000';
+    document.getElementById('game-screen').style.zIndex = '1';
     document.getElementById('game-screen').style.display = 'flex';
     document.getElementById('game-screen').style.alignItems = 'center';
     document.getElementById('game-screen').style.justifyContent = 'center';
-
-    // invisible man image
-    const invisibleMan = document.getElementById('invisibleMan');
-    invisibleMan.style.width = '100vw';
-    invisibleMan.style.height = '100vh';
-    invisibleMan.style.position = 'absolute';
-    invisibleMan.style.top = '0';
-    invisibleMan.style.left = '0';
-    invisibleMan.style.objectFit = 'cover';
-    invisibleMan.style.zIndex = '999';
 
     // letters entered/actual guessing
     let currentWord = '';
