@@ -1,9 +1,9 @@
 @font-face {
-    font-family:"fade";
-    src:url('../assets/HalfFaded.ttf');
+    font-family:"fade_font";
+    src:url('../assets/RoughSerif-ALjqA.ttf');
 }
 *{
-    font-family:"fade";
+    font-family:"fade_font";
 }
 body {
     font-style: italic;
@@ -35,6 +35,7 @@ h1 {
     font-style: italic;
     margin-top: 80px;
     text-shadow: 0 4px 10px rgba(192, 0, 0, 0.95);
+    font-family:"fade_font";
 }
 
 #inputContainer {
@@ -56,7 +57,9 @@ button {
     font-size: 1rem;
     cursor: pointer;
     margin-top: 10px;
-    font-style: italic;
+}
+button:hover{
+    background-color: #400000;
 }
 
 button:disabled {
@@ -108,10 +111,10 @@ h1, #inputContainer, form, label, input {
     bottom:0px;
     width:670px;
     height:95%;
-    opacity:0.8;
+    opacity:0.2;
 }
 #dialogue{
-    background-image:url('../assets/footerbg.png');
+    background-color:#00000095;
     background-size:cover;
     height:25%;
     z-index:2;
@@ -120,13 +123,20 @@ h1, #inputContainer, form, label, input {
     bottom:5px;
     border-radius:10px;
     opacity:0;
-    transition:opacity 1s;
+    transition:opacity 0.1s;
+    transition:transform 0.1s;
+    transform:translateY(10px);
+}
+#dialogue p{
+    margin-top:5.5%;
+    font-size:4.5rem;
+    text-align:center;
 }
 #speakerName{
     z-index:3;
     width:30%;
     height:10%;
-    background-color:rgba(255, 255, 255, 0.352);
+    background-color:rgba(255, 255, 255, 0.754);
     position:fixed;
     left: 5%;
     bottom:17%;
@@ -134,13 +144,40 @@ h1, #inputContainer, form, label, input {
     border-radius:10px;
     text-align:center;
     opacity:0;
-    transition:opacity 1s;
+    transition:opacity 0.1s;
+    transition:transform 0.1s;
+    transform:translateY(10px);
+}
+#template{
+    display:none;
 }
 #speakerName h2{
-    font-size:4rem;
+    font-size:3rem;
     color:black;
-    margin-top:0px;
+    margin-top:10px;
 }
 #dialogue.show, #speakerName.show{
     opacity:1;
+    transform:translateY(-10px);
+}
+.choices{
+    position:relative;
+    width:30%;
+    height:10%;
+    z-index:3;
+    margin-right:5%;
+    margin-bottom:-42%;
+    pointer-events:none;
+    display:none;
+}
+#help{
+    position:absolute;
+    bottom:9%;
+    right:24%;
+    border-radius:50%;
+    aspect-ratio:1/1;
+    height:5%;
+    padding:0px;
+    z-index:3;
+    display:none;
 }

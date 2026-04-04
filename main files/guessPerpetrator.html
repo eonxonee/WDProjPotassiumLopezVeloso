@@ -7,6 +7,7 @@
     <title>Guessing Game</title>
     <link rel="icon" type="image/png" href="../assets/logo.png">
     <link rel="stylesheet" href="stylesheetGuessPerpetrator.css">
+    
 </head>
 <body>
 <div id="game-screen">
@@ -15,21 +16,156 @@
     </button>
 
     <img id="invisibleMan" src="../assets/guessPerpMan.png" alt="Invisible Man">
-    <div id="speakerName"><h2>???</h2></div>
-    <div id="dialogue"><p>So...</p></div>
+    <div id="speakerName"><h2 id="name">? ? ?</h2></div>
+    <div id="dialogue">
+        <p id="speak"></p>
+        <p id="template">So...</p> 
+    </div>
+    <button id="choice1" class="choices">Yes, and I am quite sure</button>
+    <button id="choice2" class="choices">No, not yet</button>
+    
+    <button popovertarget="details" id="help">ⓘ</button>
+    <div popover id="details">
+        <h3>Rules</h3>
+        <h4>Press any letter key to spell out the first and last name of who you think the perpetrator is</h4>
+        <ul>
+            <li>No need to add spaces to separate the first and last name (ex. arettakallergis)</li>
+            <li>Non-case sensitive</li>
+            <li>Press Enter Key to Finalize Guess</li>
+        </ul>
+    </div>
 </div>
 
 <script>
     let screen=document.getElementById('game-screen');
     let clickCount=0;
+    let i;
     screen.addEventListener("click", function(){
         clickCount++;
         console.log(clickCount)
         if(clickCount==1){
+            i=0;
             document.getElementById("speakerName").classList.add("show");
             document.getElementById("dialogue").classList.add("show");
+            document.getElementById("invisibleMan").style.opacity = "0.8";
+            setTimeout(typewrite,200);
+        }else if(clickCount==2){
+            i=0;
+            document.getElementById("speak").innerHTML="";
+            document.getElementById("name").innerText="You";
+            document.getElementById("template").innerHTML="! ! !";
+            document.getElementById("invisibleMan").style.opacity = "0.5";
+            typewrite();
+        }else if(clickCount==3){
+            i=0;
+            document.getElementById("speak").innerHTML="";
+            document.getElementById("name").innerText="???";
+            document.getElementById("template").innerHTML="Why so surprised?";
+            document.getElementById("invisibleMan").style.opacity = "0.8";
+            typewrite();
+        }else if(clickCount==4){
+            i=0;
+            document.getElementById("speak").innerHTML="";
+            document.getElementById("name").innerText="???";
+            document.getElementById("template").innerHTML="Didn't I inform you of our meeting?";
+            document.getElementById("invisibleMan").style.opacity = "0.8";
+            typewrite();
         }
+        else if(clickCount==5){
+            i=0;
+            document.getElementById("speak").innerHTML="";
+            document.getElementById("name").innerText="You";
+            document.getElementById("template").innerHTML="Apologies Sir Laurel...";
+            document.getElementById("invisibleMan").style.opacity = "0.5";
+            typewrite();
+        }else if(clickCount==6){
+            i=0;
+            document.getElementById("speak").innerHTML="";
+            document.getElementById("name").innerText="You";
+            document.getElementById("template").innerHTML="I...";
+            typewrite();
+        }else if(clickCount==7){
+            i=0;
+            document.getElementById("speak").innerHTML="";
+            document.getElementById("name").innerText="You";
+            document.getElementById("template").innerHTML="..was just caught off guard";
+            typewrite();
+        }else if(clickCount==8){
+            i=0;
+            document.getElementById("speak").innerHTML="";
+            document.getElementById("name").innerText="Nikkei Laurel";
+            document.getElementById("template").innerHTML="Anyhow,";
+            document.getElementById("invisibleMan").style.opacity = "0.8";
+            typewrite();
+        }else if(clickCount==9){
+            i=0;
+            document.getElementById("speak").innerHTML="";
+            document.getElementById("name").innerText="Nikkei Laurel";
+            document.getElementById("template").innerHTML="I heard you found some leads";
+            typewrite();
+        }else if(clickCount==10){
+            i=0;
+            document.getElementById("speak").innerHTML="";
+            document.getElementById("name").innerText="Nikkei Laurel";
+            document.getElementById("template").innerHTML="Do you have a suspicion on who it is?";
+            typewrite();
+        }else if(clickCount==11){
+            i=0;
+            document.getElementById("template").innerHTML="";
+            document.getElementById("speak").innerHTML="";
+            document.getElementById("name").innerText="You";
+            document.getElementById("invisibleMan").style.opacity = "0.5";
+            document.getElementById("choice1").style.display="block";
+            document.getElementById("choice2").style.display="block";
+            document.getElementById("choice1").style.pointerEvents="auto";
+            document.getElementById("choice2").style.pointerEvents="auto";
+        }
+
     });
+
+    function typewrite(){
+        let dialogue = document.getElementById("template").innerText;
+        if(i<dialogue.length){
+            document.getElementById("speak").innerHTML += dialogue.charAt(i);
+            i++
+            setTimeout(typewrite, 30);
+        }
+    }
+
+    let choice_1=document.getElementById("choice1");
+    let choice_2=document.getElementById("choice2");
+
+    choice_1.addEventListener("click", function(){
+        i=0;
+        document.getElementById("speak").innerHTML="";
+        document.getElementById("name").innerText="Nikkei Laurel";
+        document.getElementById("template").innerHTML="Go on, I'm Listening.";
+        choice_1.style.display="none";
+        choice_2.style.display="none";
+        document.getElementById("help").style.display="block";
+        choice_1.style.pointerEvents="none";
+        choice_1.style.pointerEvents="none";
+        document.getElementById("invisibleMan").style.opacity = "0.8";
+        typewrite();
+        guess();
+    });
+    choice_2.addEventListener("click", function(){
+        i=0;
+        document.getElementById("speak").innerHTML="";
+        document.getElementById("name").innerText="Nikkei Laurel";
+        document.getElementById("template").innerHTML="You are dismissed.";
+        choice_1.style.display="none";
+        choice_2.style.display="none";
+        choice_1.style.pointerEvents="none";
+        choice_1.style.pointerEvents="none";
+        document.getElementById("invisibleMan").style.opacity = "0.8";
+        typewrite();
+        setTimeout(back, 1500);
+    });
+
+    function back(){
+        document.getElementById('backButton').click();
+    }
     document.getElementById('game-screen').style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
     document.getElementById('game-screen').style.position = 'fixed';
     document.getElementById('game-screen').style.top = '0';
@@ -43,24 +179,25 @@
 
     // letters entered/actual guessing
     let currentWord = '';
+    function guess(){
     document.addEventListener('keydown', function(event) {
         const key = event.key.toLowerCase();
         if (key.length === 1) {
-            if (currentWord.length < 4) {
+            if (currentWord.length < 20) {
                 currentWord += key;
                 displayFloatingLetter(key);
-                if (currentWord.length === 4) {
-                    if (currentWord === 'cain') {
+            }
+        }else if(event.key=="Enter"){
+             if (currentWord === 'cainfratrisida') {
                         alert('You have guessed the perpetrator. Time to seek justice.');
                         document.getElementById('backButton').click();
                     } else {
                         alert('Try Again');
                         currentWord = '';
-                    }
-                }
-            }
         }
+    }
     });
+}
     
     function displayFloatingLetter(letter) {
         const letterDiv = document.createElement('div');
@@ -69,7 +206,7 @@
         letterDiv.style.fontSize = '72px';
         letterDiv.style.color = 'red';
         letterDiv.style.textShadow = '0 0 10px red, 0 0 20px red';
-        letterDiv.style.fontFamily = 'stephcarly';
+        letterDiv.style.fontFamily = "fade_font";
         letterDiv.style.fontStyle = 'italic';
         letterDiv.style.left = (Math.random() * (window.innerWidth - 100)) + 'px';
         letterDiv.style.top = (Math.random() * (window.innerHeight - 100)) + 'px';
