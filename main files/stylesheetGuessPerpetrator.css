@@ -166,9 +166,10 @@ h1, #inputContainer, form, label, input {
     height:10%;
     z-index:3;
     margin-right:5%;
-    margin-bottom:-42%;
+    margin-bottom:-600px;
     pointer-events:none;
     display:none;
+    padding:0px;
 }
 #help{
     position:absolute;
@@ -179,5 +180,13 @@ h1, #inputContainer, form, label, input {
     height:5%;
     padding:0px;
     z-index:3;
+    display:none;
+}
+#skip{
+    position:absolute;
+    right:5%;
+    bottom:20px;
+    z-index:3;
+    background-color:rgba(59, 59, 59, 0.614);
     display:none;
 }

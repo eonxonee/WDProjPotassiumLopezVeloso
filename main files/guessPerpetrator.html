@@ -31,13 +31,17 @@
         <ul>
             <li>No need to add spaces to separate the first and last name (ex. arettakallergis)</li>
             <li>Non-case sensitive</li>
+            <li>Max 20 characters (All character names have &lt; 20 characters)</li>
             <li>Press Enter Key to Finalize Guess</li>
         </ul>
     </div>
+    <button id="skip">Skip to Guess >></button>
 </div>
 
 <script>
     let screen=document.getElementById('game-screen');
+
+//dialogue
     let clickCount=0;
     let i;
     screen.addEventListener("click", function(){
@@ -48,6 +52,7 @@
             document.getElementById("speakerName").classList.add("show");
             document.getElementById("dialogue").classList.add("show");
             document.getElementById("invisibleMan").style.opacity = "0.8";
+            document.getElementById("skip").style.display="block";
             setTimeout(typewrite,200);
         }else if(clickCount==2){
             i=0;
@@ -123,6 +128,7 @@
 
     });
 
+//fx
     function typewrite(){
         let dialogue = document.getElementById("template").innerText;
         if(i<dialogue.length){
@@ -132,6 +138,7 @@
         }
     }
 
+//choices
     let choice_1=document.getElementById("choice1");
     let choice_2=document.getElementById("choice2");
 
@@ -143,8 +150,6 @@
         choice_1.style.display="none";
         choice_2.style.display="none";
         document.getElementById("help").style.display="block";
-        choice_1.style.pointerEvents="none";
-        choice_1.style.pointerEvents="none";
         document.getElementById("invisibleMan").style.opacity = "0.8";
         typewrite();
         guess();
@@ -156,16 +161,22 @@
         document.getElementById("template").innerHTML="You are dismissed.";
         choice_1.style.display="none";
         choice_2.style.display="none";
-        choice_1.style.pointerEvents="none";
-        choice_1.style.pointerEvents="none";
         document.getElementById("invisibleMan").style.opacity = "0.8";
         typewrite();
         setTimeout(back, 1500);
     });
 
+//skip button
+document.getElementById("skip").addEventListener("click", function(){
+    clickCount=9;
+    document.getElementById("skip").style.display="none";
+});
+//return to homepage
     function back(){
         document.getElementById('backButton').click();
     }
+
+//style
     document.getElementById('game-screen').style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
     document.getElementById('game-screen').style.position = 'fixed';
     document.getElementById('game-screen').style.top = '0';
@@ -190,7 +201,7 @@
         }else if(event.key=="Enter"){
              if (currentWord === 'cainfratrisida') {
                         alert('You have guessed the perpetrator. Time to seek justice.');
-                        document.getElementById('backButton').click();
+                        back();
                     } else {
                         alert('Try Again');
                         currentWord = '';
