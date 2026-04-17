@@ -83,7 +83,7 @@ function clock(){
     var year=localStorage.getItem("year") || 2019;
 
 
-    if(minutes==19 && seconds==0){
+    if(minutes==30 && seconds==0){
         var dayNum=Number(day);
         var dayCounterNum=Number(dayCounter);
         dayNum++
@@ -109,6 +109,17 @@ function clock(){
         yearNum++
         document.getElementById("year").innerHTML=yearNum;
         localStorage.setItem("year", yearNum.toString());
+    }
+    if(hours==2 && minutes==0 && seconds==0){
+        document.getElementById("static").style.display="block";
+        document.getElementById("hello").innerHTML="□︎♒︎⬥︎ ◻︎♒︎ 🙵♒︎□︎⬧︎ ♌︎❒︎⌧︎";
+    }else if(hours==4 && minutes==0 && seconds==0){
+        document.getElementById("static").style.display="block";
+        document.getElementById("hello").style.display="block";
+        document.getElementById("hello").innerHTML="●︎♑︎ □︎●︎■︎♒︎ ⬥︎❒︎ ⬥︎🙵●︎❑︎■︎ 🙵♒︎◆︎ □︎♎︎❖︎⬥︎ ⬥︎🙵❒︎⌧︎🙰🙵⬥︎❖︎ ⌘︎♒︎◆︎♒︎🖳︎ ✂︎☹︎❖︎ ♏︎□︎❒︎❒︎♑︎ ◆︎♒︎♎︎□︎□︎♌︎ ⬥︎🙵●︎♐︎■︎♒︎◆︎ ⬥︎🙵♎︎❑︎ ⌘︎♎︎⬥︎♒︎◆︎✍︎✂︎";
+    }else{
+        document.getElementById("static").style.display="none";
+        document.getElementById("hello").style.display="none";
     }
 }
 function addZero(i){

@@ -630,6 +630,33 @@ form ::placeholder{
     opacity:1;
 }
 
+/*misc*/
+#beep{
+    z-index: 10;
+    height:100vh;
+    width:100vw;
+    display:none;
+    position:absolute;
+}
+#hello{
+    position:absolute;
+    z-index:6;
+    color:#25252596;
+    top: 40%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "fileFont", courier;
+    font-size:5rem;
+    text-align:center;
+    width:100vw;
+    height:100vh;
+    pointer-events:none;
+    display:none;
+    opacity:1;
+    transition: opacity linear 0.67s;
+}
+
 /*mobile*/
 
 @media screen and (max-width: 540px){
@@ -777,4 +804,3 @@ form ::placeholder{
     transition-delay: 1.5s;
 }
 }
-lContain

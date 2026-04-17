@@ -24,12 +24,29 @@
             <p>Dear Mailer, we are sorry to announce that staring February 1st, Mailer&copy; will permanently cease all operations</p>
         </div>
         <button popovertarget="update"id="info"><h1>?</h1></button>
-        
         <div id="pfp"><h1>A</h1></div>
     </div>
-    <div id="sidebar1"></div>
-    <div id="main"></div>
+    <div id="sidebar1">
+        <button id="write"><i class="fa-solid fa-pen"></i>Write</button>
+        <button id="inbox"><i class="fa-solid fa-inbox"></i>Inbox<span class="num">5</span></button>
+        <button id="promo"><i class="fa-solid fa-shop"></i>Promotions</button>
+        <button id="trash"><i class="fa-solid fa-trash"></i>Trash</button>
+    </div>
+    <div id="main">
+        <div id="current"><i class="fa-solid fa-inbox"></i>Inbox</div>
+    </div>
     <div id="sidebar2"></div>
     </div>
+    <script>
+        let current=document.getElementById("current").innerText;
+        let inbox=document.getElementById("inbox");
+        let promo=document.getElementById("promo");
+        let trash=document.getElementById("trash");
+
+        promo.addEventListener("click", function(){
+            current=promo.innerText;
+            document.getElementById("current").ht
+        });
+    </script>
 </body>
 </html>
