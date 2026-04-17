@@ -1,36 +1,43 @@
 @font-face {
-    font-family: "stephcarly";
-    src: url("../assets/StephCarlyDemo-Regular.ttf");
+    font-family:"fade_font";
+    src:url('../assets/RoughSerif-ALjqA.ttf');
 }
-
+*{
+    font-family:"fade_font";
+}
 body {
-    font-family: stephcarly;
     font-style: italic;
     color: #ffffff;
     background-color: #000000;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height:100vh;
+    width:100vw;
 }
 
 .backbutton {
-    font-family: stephcarly;
     font-style: italic;
     position: absolute;
     top: 5%;
     left: 10%;
     transform: translate(-50%, -50%);
+    z-index: 1001;
 }
 
 h1 {
     color: #ffffff;
     text-align: center;
     font-size: xxx-large;
-    font-family: stephcarly;
     font-style: italic;
     margin-top: 80px;
     text-shadow: 0 4px 10px rgba(192, 0, 0, 0.95);
+    font-family:"fade_font";
 }
+
 #inputContainer {
     background: rgb(134, 4, 4);
     border-radius: 20px;
@@ -40,6 +47,7 @@ h1 {
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
+
 button {
     background-color: #800000;
     color: #ffffff;
@@ -49,18 +57,22 @@ button {
     font-size: 1rem;
     cursor: pointer;
     margin-top: 10px;
-    font-family: stephcarly;
-    font-style: italic;
 }
+button:hover{
+    background-color: #400000;
+}
+
 button:disabled {
     background-color: #333;
     cursor: not-allowed;
 }
+
 #wordDisplay {
     font-size: 1.5rem;
     margin-bottom: 20px;
     letter-spacing: 0.2em;
 }
+
 #message {
     margin-top: 20px;
     font-weight: bold;
@@ -75,14 +87,106 @@ input[type="text"] {
     margin-right: 10px;
     background-color: #000000;
     color: #ffffff;
-    font-family: stephcarly;
-    font-style: italic; 
+    font-style: italic;
 }
+
 label {
     color: #ffffff;
     font-size: 1.2rem;
     margin-bottom: 10px;
     display: block;
-    font-family: stephcarly;
     font-style: italic;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+h1, #inputContainer, form, label, input {
+    display: none;
+}
+#invisibleMan{
+    position:absolute;
+    bottom:0px;
+    width:720px;
+    height:95%;
+    opacity:0.2;
+}
+#dialogue{
+    background-color:#00000095;
+    background-size:cover;
+    height:25%;
+    z-index:2;
+    width:95%;
+    position:fixed;
+    bottom:5px;
+    border-radius:10px;
+    opacity:0;
+    transition:opacity 0.1s;
+    transition:transform 0.1s;
+    transform:translateY(10px);
+}
+#dialogue p{
+    margin-top:5.5%;
+    font-size:4.5rem;
+    text-align:center;
+}
+#speakerName{
+    z-index:3;
+    width:30%;
+    height:10%;
+    background-color:rgba(255, 255, 255, 0.754);
+    position:fixed;
+    left: 5%;
+    bottom:17%;
+    margin-bottom:10px;
+    border-radius:10px;
+    text-align:center;
+    opacity:0;
+    transition:opacity 0.1s;
+    transition:transform 0.1s;
+    transform:translateY(10px);
+}
+#template{
+    display:none;
+}
+#speakerName h2{
+    font-size:3rem;
+    color:black;
+    margin-top:10px;
+}
+#dialogue.show, #speakerName.show{
+    opacity:1;
+    transform:translateY(-10px);
+}
+.choices{
+    position:relative;
+    width:30%;
+    height:10%;
+    z-index:3;
+    margin-right:5%;
+    margin-bottom:-600px;
+    pointer-events:none;
+    display:none;
+    padding:0px;
+}
+#help{
+    position:absolute;
+    bottom:9%;
+    right:24%;
+    border-radius:50%;
+    aspect-ratio:1/1;
+    height:5%;
+    padding:0px;
+    z-index:3;
+    display:none;
+}
+#skip{
+    position:absolute;
+    right:5%;
+    bottom:20px;
+    z-index:3;
+    background-color:rgba(59, 59, 59, 0.614);
+    display:none;
 }

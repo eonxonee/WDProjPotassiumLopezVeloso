@@ -1,4 +1,17 @@
-<<<<<<< HEAD
+# FINAL MODIFICATION PROPOSAL
+## CRUD Process
+   * Create: User creates a 'note' in the Notes app
+   * Read: System saves created note into localStorage when user creates a new 'note'
+   * Update: User can modify previous notes by clicking note title and editing text
+   * Delete: User can delete new or previous notes by clicking 'Delete' button
+     > Updated wireframe: https://www.canva.com/design/DAG3KVnLVYY/T15bPD2_kiuGvoqs9C1Ubw/edit
+## Other Modifications to be Made:
+   * Add photos/video/file app (will contain subtle clues for puzzles)
+   * Create Settings (allows User to modify interface of Aretta's laptop), Mail (contains fake chats to gather evidence and sends messages to characters), and Trashbin (allows User to recover deleted evidence/clues) apps
+   * Fix Background Music settings (allows user to switch between melodies)
+
+---
+
 # Q3 Proposal Update
 ## Final Title: Kallergis Conundrum
 ## Features:
@@ -20,7 +33,7 @@
 
 ## Title: Kallergis Conundrum
 =======
-Z## Title: Kallergis Conundrum
+## Title: Kallergis Conundrum
 >>>>>>> 8e4c42f (website revamp init commit)
 ## Subtitle: The Murder Mystery Begins
 

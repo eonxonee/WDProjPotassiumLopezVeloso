@@ -1,0 +1,174 @@
+/*General Styling*/
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    border:0;
+    overflow:hidden;
+}
+html, body{
+    min-height:100vh;
+}
+.container{
+    display:grid;
+    grid-template-columns: 250px 20fr 55px;
+    grid-template-rows:1fr 10fr;
+    width:100vw;
+    height:100vh;
+}
+#header{
+    grid-area:1/1/2/4;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:flex-end;
+    background-color:rgb(255, 240, 249);
+}
+#logo{
+    height:50%;
+    aspect-ratio:1/1;
+    border-radius:5px;
+    margin-left:0rem;
+    margin-right:0.2rem;
+
+}
+#mailer{
+    font-size:2cqi;
+    margin-right:3rem;
+}
+#searchbar{
+    width:75%;
+    height:100%;
+    display:flex;
+    align-items:center;
+}
+#search{
+    width:90%;
+    height:60%;
+    border-top-left-radius:0;
+    border-top-right-radius:50px;
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:50px;
+    margin-left:0rem;
+    background-color:rgb(213, 213, 213);
+    padding-left:5%;
+    margin-right:0px;
+}
+#search:focus{
+    outline:none;
+}
+#sBtn{
+    background-color:rgb(213, 213, 213);
+    border-radius:50%;
+    height:60%;
+    width:auto;
+    aspect-ratio:1/1;
+    border-top-left-radius:50px;
+    border-top-right-radius:0;
+    border-bottom-left-radius:50px;
+    border-bottom-right-radius:0;
+    text-align:center;
+    display:flex;
+    align-items:center;
+}
+#sBtn i{
+    margin-left:10px;
+}
+#info{
+    border:2px solid black;
+    height:50%;
+    aspect-ratio:1/1;
+    text-align:center;
+    border-radius:50%;
+    margin-left:1rem;
+}
+#pfp{
+    border:2px solid black;
+    background-color:white;
+    height:45px;
+    aspect-ratio:1/1;
+    text-align:center;
+    border-radius:50%;
+    margin-right:1rem;
+    margin-left:1rem;
+}
+#sidebar1{
+    grid-area:2/1/3/2;
+}
+#main{
+    grid-area:2/2/3/3;
+}
+#sidebar2{
+    grid-area:2/3/3/4;
+    background-color:rgb(255, 240, 249);
+}
+#sidebar1{
+    display:flex;
+    flex-direction:column;
+    background-color:rgb(255, 240, 249);
+}
+#sidebar1 button{
+    font-weight:bold;
+}
+#inbox:hover, #promo:hover, #trash:hover{
+    background-color:rgb(255, 227, 232);
+}
+#inbox, #promo, #trash{
+    width:100%;
+    font-weight:bold;
+    font-size:1rem;
+    background-color:transparent;
+    text-align:left;
+    height:4%;
+    border-radius:0px 30px 30px 0px;
+}
+#inbox i, #promo i, #trash i{
+    margin-left:1rem;
+    margin-right:1rem;
+}
+#write{
+    background-color:pink;
+    font-size:1.5rem;
+    width:80%;
+    height:10%;
+    margin-bottom:1rem;
+    border-radius:0px 30px 30px 0px;
+    margin-top:0.5rem;
+}
+#write:hover{
+    background-color:rgb(208, 141, 152);
+}
+#write i{
+    margin-right:0.5rem;
+}
+.num{
+    float:right;
+    margin-right:1rem;
+}
+button:hover{
+    cursor:pointer;
+}
+#current{
+    border-bottom:1px solid grey;
+    text-align:left;
+    font-size:2rem;
+    height:5%;
+}
+#current i{
+    font-size:1.5rem;
+    margin-left:1%;
+    margin-right:1%;
+}
+@media (max-width: 1000px) {
+#mailer{
+    font-size:2cqi;
+    margin-right:1rem;
+}
+#info{
+    margin-left:0.5rem;
+}
+#pfp{
+    margin-right:0.5rem;
+    margin-left:0.5rem;
+}
+}

@@ -4,49 +4,113 @@
     <meta charset="UTF-8">
     <meta name="author" content="Hannah Lopez and Mathea Veloso">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <title>KALLERGIS CONUNDRUM</title>
     <link rel="stylesheet" href="main files/stylesheetIndex.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8840769448.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="loaded()">
+<h1 id="hello"></h1>
+<img src="assets/static.png" id="static">
 <div class="main">
-
+    <audio src="assets/air.mp3" id="air"></audio>
+    <audio src="assets/introMusic.mp3" id="introAudio"></audio>
+    <audio src='assets/caseSlideAudio.mp3' id='caseSlide'></audio>
+    <div id='containerFile'>
+    <img src='assets/openingNote.png' id='caseFile'>
+    <p id='continue'>[Click to Continue]</p>
+    </div>
+    <h1 id="title">Kallergis <br>Conundrum</h1>
+    <h3 id='instruction'>[Click again to start]</h3>
+    <div id="blackscreen">
+    </div>
+    <div id="lContain">
+    <img src="assets/laptopsprite.png" id='laptop'>
+    </div>
+    <p id='enter'>[Investigate Laptop]</p>
+    <div id='datesNstuff'>
+    <h4 id="timeDetails">Time: <span id=time></span><br>
+    Date: <span id=month>2</span>/<span id=day>18</span>/<span id="year">2019</span><br>
+    Day: <span id=dayCounter>1</span></h4>
+    </div>
 <div class="grid-container">
+    <div id="A"><img src='assets/calendarIcon.png'></div>
 
-    <div id="calendar"class="laptop"><img src="assets/calendarIcon.png"></div>
+    <div id="B"><img src='assets/randImg.png'></div>
 
-    <div id="randPhotoA"class="laptop"><img src="assets/randImg.png"></div>
-
-    <div id="music"class="laptop">
-        <img src="assets/recordDisk.png" id="recordDisk">
+    <div id="C">
+        <div id="rDiv"><img src='assets/recordDisk.png' id="rD"></div>
+        <div id="music1div">
+            <img src="assets/music1.jpg" id="album">
+            <h1 id="song-title">Title</h1>
+            <p id="artist">Artist</p>
+            <div id="tContain"><input type="range" id="timeline"></div>
+            <div id="ctrl">
+            <i class="fa-solid fa-backward-step" id="prev"></i>
+            <i class="fa-solid fa-play" id="play_pause"></i>
+            <i class="fa-solid fa-forward-step" id="next"></i>
+            </div>
+        </div>
     </div>
 
-    <div id="clue"class="laptop"></div>
+    <div id="D"><img src='assets/music1.jpg'></div>
 
-    <div id="E"class="laptop"></div>
+    <div id="E"class="smallApp"><img src='assets/Files.png'><br><p>Files</p></div>
 
-    <div id="F"class="laptop"></div>
+    <div id="F" class="smallApp"><a href='main files/guessnumber.html'><img src='assets/Guess Number.png'></a><br><p>Guess the Number</p></div>
 
-    <div id="G"class="laptop"></div>
+    <div id="G"class="smallApp"><img src='assets/Aretta.png'><br><p>selfie.png</p></div>
 
-    <div id="H"class="laptop"></div>
+    <div id="H"class="smallApp"><img src='assets/trash.png'><br><p>Trashbin</p></div>
 
-    <div id="I"class="laptop"></div>
+    <div id="I" class="smallApp"><a href='main files/guessword.html'><img src='assets/Guess Word.png'></a><br><p>Guess the Word</p></div>
 
-    <div id="J"class="laptop"></div>
+    <div id="J" class="smallApp"><img src='assets/Schedule.png'><br><p>schedule.png</p></div>
 
-    <div id="K"class="laptop"></div>
+    <div id="K" class="smallApp"><img src='assets/Childhood.png'><br><p>oldpic.png</p></div>
 
-    <div id="L"class="laptop"></div>
+    <div id="L"class="smallApp"><a href="main files/mailer.html"><img src='assets/Mailer (Emails).png'></a><br><p>Mailer</p></div>
 
-    <div id="M"class="laptop"></div>
+    <div id="M"class="smallApp"><img src='assets/Settings.png'><br><p>Settings</p></div>
 
-    <div id="N" class="laptop"></div>
-
-</div>
+    <div id="N" class="smallApp"><img src='assets/Chatty (Messaging).png'><br><p>Chatty</p></div>
+    
     <div id="mask"></div>
-    <div class="toggle-footer" id="toggleFooter"><button id="footer-toggle-button" onclick="footerToggle()">oPENFILES</button></div>
-    <div class="footer" id="footer">Footer</div>
+    <div class="toggle-footer" id="toggleFooter"><button id="footer-toggle-button" onclick="footerToggle()"><p>Access Chorona Police station files</p><img src="assets/chonoraLogo.png" id="chronora"></button></div>
+
+
+    <div class="footer" id="footer">
+        <div id='AL'><p>You are inspecting</p><br><h1>Aretta's Laptop</h1></div>
+        <div id='NT'class='footerstuff'><button id="notesBtn" onclick="footerClose()"><p>NOTES</p></button></div>
+        <div id='GP'class='footerstuff'><button id="guessperpBtn" onclick="window.location.href='main files/guessPerpetrator.html'"><p>???</p></button></div>
+        <div id='S'class='footerstuff'><a href="https://docs.google.com/document/d/1hTovgKtbg93t3-dJ8EIDSA7AhKb3rBrdQAyNGJtVQ7A/edit?usp=sharing"><h1>Sources</h1></a></div>
+        <div id='KC'class='footerstuff'><h1>Kallergis Conundrum</h1><h4>©2025 Lopez, Veloso All Rights Reserved</h4><br><img src='assets/logonobg.png'></div>
+    </div>
 </div>
+    <div id="notes">
+        <div id="notesheader">
+            <h1>Notes</h1>
+        <button id="closeNotes" onclick="closeNotes()"><h1>X</h1></button>
+        </div>
+        <div id="notesControls">
+            <button id="add" onclick="newNote()"><h1>+</h1></button>
+            <button id="remove" onclick="removeNote()"><h1>-</h1></button>
+        </div>
+        <div id="previewNotes"></div>
+        <div id=openNotes>
+            <form id="notesInput">
+            <input type="text" id="notesTitle" placeholder="New Note">
+            <textarea id="notesContent" placeholder="Pay attention. Be astonished. Tell about it. What have you discovered?"></textarea>
+            <button id="save" onclick="saved(event)"><img src="assets/logonobg.png"></button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
 <script src="main files/main.js"></script>
 </body>
+</html>
