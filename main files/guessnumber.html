@@ -22,7 +22,7 @@
 
 <script>
 (function() {
-    const secret = 19;
+    const secret = 4723;
     const maxAttempts = 10;
     let attemptsLeft = maxAttempts;
 
@@ -33,7 +33,7 @@
     const attemptsDisplay = document.getElementById("attemptsDisplay");
 
     function showPrompt() {
-        display.textContent = "Guess a number between 1 and 100";
+        display.textContent = "Guess a number between 4000 and 5000";
         attemptsDisplay.textContent = `Attempts left: ${attemptsLeft} / ${maxAttempts}`;
     }
 
@@ -52,14 +52,14 @@
 
         const val = Number(raw);
         if (!Number.isInteger(val)) {
-            message.textContent = "Enter an integer from 1 to 100.";
+            message.textContent = "Enter an integer from 4000 to 5000.";
             input.value = "";
             input.focus();
             return;
         }
 
-        if (val < 1 || val > 100) {
-            message.textContent = "Enter a number between 1 and 100.";
+        if (val < 4000 || val > 5000) {
+            message.textContent = "Enter a number between 4000 and 5000.";
             input.value = "";
             input.focus();
             return;
