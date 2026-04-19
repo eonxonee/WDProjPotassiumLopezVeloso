@@ -33,19 +33,53 @@
         <button id="trash"><i class="fa-solid fa-trash"></i>Trash</button>
     </div>
     <div id="main">
-        <div id="current"><i class="fa-solid fa-inbox"></i>Inbox</div>
+        <div id="current"><i id='icon'class="fa-solid fa-inbox"></i><h1 id="currentN">Inbox</h1></div>
+    <div id="emails">
+        <div class="all">
+            <h3>Sherika Denvers</h3>
+        </div>
+        <div class="promotions">
+            <h3>Elizabeth’s Whisper</h3></div>
+        <div class="all">
+            <h3>Bheyonsay Windchill</h3>
+        </div>
+        <div class="promotions">
+            <h3>RADLEY</h3>
+        </div>
+        <div class="promotions">
+            <h3>Macalintal Shampoo and Hair Growth </h3>
+        </div>
+    </div>
     </div>
     <div id="sidebar2"></div>
     </div>
     <script>
-        let current=document.getElementById("current").innerText;
+        let current=document.getElementById("currentN").innerText;
         let inbox=document.getElementById("inbox");
         let promo=document.getElementById("promo");
         let trash=document.getElementById("trash");
+        let icon=document.getElementById("icon");
 
+        inbox.addEventListener("click", function(){
+            current="Inbox";
+            icon.className="";
+            icon.classList.add("fa-solid");
+            icon.classList.add("fa-inbox");
+            document.getElementById("currentN").innerHTML=current;
+        });
         promo.addEventListener("click", function(){
             current=promo.innerText;
-            document.getElementById("current").ht
+            icon.className="";
+            icon.classList.add("fa-solid");
+            icon.classList.add("fa-shop");
+            document.getElementById("currentN").innerHTML= current;
+        });
+        trash.addEventListener("click", function(){
+            current=trash.innerText;
+            icon.className="";
+            icon.classList.add("fa-solid");
+            icon.classList.add("fa-trash");
+            document.getElementById("currentN").innerHTML=current;
         });
     </script>
 </body>
