@@ -139,25 +139,25 @@ const songArtist=document.getElementById("artist");
 
 const playlist=[
     {
-        image: "assets/music1.jpg",
+        image: "assets/you are loved.jpg",
         title: "2:am",
         artist: "Chillpeach",
         audio: "assets/2am.mp3"
     },
     {
-        image: "assets/music1.jpg",
+        image: "assets/love music.jpeg",
         title: "Violin Sonata in D major",
         artist: "Jean-Marie Leclair",
         audio: "assets/Un poco andante.mp3"
     },
     {
-        image: "assets/music1.jpg",
+        image: "assets/Pretty Girl Avenue.jpeg",
         title: "『3a.m』",
         artist: "TOGITO",
         audio: "assets/3a.m.mp3"
     },
     {
-        image: "assets/music1.jpg",
+        image: "assets/Pretty Girl Avenue.jpeg",
         title: "4:00am",
         artist: "Taeko Ohnuki",
         audio: "assets/4am.mp3"
