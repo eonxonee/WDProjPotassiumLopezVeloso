@@ -11,7 +11,7 @@
 
 <body>
 <button id="backButton">Back to Aretta's Laptop</button>
-<h1>Guess My Word</h1>
+<h1>Guess The Word</h1>
 <div id="gameContainer">
     <p id="wordDisplay"></p>
     <input type="text" id="guessInput" maxlength="1" autocomplete="off">
@@ -82,7 +82,7 @@ function makeGuess() {
     }
 
     if (guessedWord.indexOf("_") === -1) {
-        document.getElementById("message").textContent = "Congratulations! You've guessed the word!";
+        document.getElementById("message").textContent = "...8 5 12 9 15 14 (Hint: A = 1)";
         input.disabled = true;
         document.getElementById("guessBtn").disabled = true;
     }
