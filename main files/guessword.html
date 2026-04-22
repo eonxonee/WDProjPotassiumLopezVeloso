@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<button id="backButton">Back to Aretta's Laptop</button>
+<button id="backButton" onclick="window.location.href='../index.html'">Back to Aretta's Laptop</button>
 <h1>Guess The Word</h1>
 <div id="gameContainer">
     <p id="wordDisplay"></p>
@@ -91,9 +91,6 @@ function makeGuess() {
     input.focus();
 }
 
-document.getElementById("backButton").addEventListener("click", function() {
-  window.history.back();
-});
 </script>
 </body>
 </html>

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="stylesheetGuessNumber.css">
 </head>
 <body>
-    <button id="backButton">Back to Aretta's Laptop</button>
+    <button id="backButton"  onclick="window.location.href='../index.html'">Back to Aretta's Laptop</button>
     <h1>Guess The Number</h1>
     <div id="gameContainer">
         <p id="wordDisplay"></p>
@@ -33,7 +33,7 @@
     const attemptsDisplay = document.getElementById("attemptsDisplay");
 
     function showPrompt() {
-        display.textContent = "Guess a number between 4000 and 5000";
+        display.textContent = "Guess a number between 1000 and 5000";
         attemptsDisplay.textContent = `Attempts left: ${attemptsLeft} / ${maxAttempts}`;
     }
 
@@ -92,10 +92,6 @@
     showPrompt();
     input.focus();
 })();
-
-document.getElementById("backButton").addEventListener("click", function() {
-    window.history.back();
-});
 </script>
 </body>
 </html>
