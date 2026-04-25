@@ -52,7 +52,6 @@ function start(){
         air.play();
         enter.classList.remove('show');
     }
-
 }
 
 
@@ -406,6 +405,7 @@ function removeNote(){
     }
 }
 
+//footer
 function adjust(){
 let footerstuff=document.querySelectorAll('.footerstuff');
 let AL=document.getElementById('AL');
@@ -422,3 +422,54 @@ footerstuff.forEach((elmt)=>{
 })
 }
 
+//exit. chat DISCONTINUED
+
+document.getElementById("xchat").addEventListener("click", function(){
+    document.getElementById("chatty").style.display="none";
+})
+
+//main chat
+
+let chatty=document.getElementById("chatmain");
+
+document.getElementById("blanc").addEventListener("click", function(){
+    document.getElementById("blanc").style.display="none";
+    document.getElementById("fam").style.display="none";
+    document.getElementById("bsf").style.display="none";
+    chatsend("my love<3", "gm babe")
+});
+
+function chatsend(name, newmessage){
+    let newtxtdiv=document.createElement("div");
+    newtxtdiv.setAttribute("class", "newtxtdiv");
+    chatty.appendChild(newtxtdiv);
+
+    let newtxtname = document.createElement("p");
+    newtxtname.setAttribute("class", "newtxtname");
+    newtxtdiv.appendChild(newtxtname);
+    newtxtname.innerText=name;
+
+    let newtxt= document.createElement("p");
+    newtxt.setAttribute("class", "newtxt");
+    newtxtdiv.appendChild(newtxt);
+    newtxt.innerText=newmessage;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById("fam")
+document.getElementById("bsf")

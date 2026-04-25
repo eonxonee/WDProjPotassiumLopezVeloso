@@ -7,6 +7,9 @@
     <link rel="icon" type="image/png" href="../assets/Mailer (Emails).png">
     <script src="https://kit.fontawesome.com/8840769448.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="stylesheetMailer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>Mailer</title>
 </head>
 <body>
@@ -16,16 +19,12 @@
         <h1 id="mailer">Mailer</h1>
         <div id="searchbar">
         <div id="sBtn"><i class="fa-solid fa-magnifying-glass"></i></div>
-        <input type="text" id="search" disabled>
-        </div>
-        <div popover id="update">
-            <h1>Update 10.4</h3>
-            <h2>January 24, 2026</h2>
-            <p>Dear Mailer, we are sorry to announce that staring February 1st, Mailer&copy; will permanently cease all operations</p>
+        <div id="search"></div>
         </div>
         <button popovertarget="update"id="info"><h1>?</h1></button>
         <div id="pfp"><h1>A</h1></div>
     </div>
+    
     <div id="sidebar1">
         <button id="write"><i class="fa-solid fa-pen"></i>Write</button>
         <button id="inbox"><i class="fa-solid fa-inbox"></i>Inbox<span class="num">4</span></button>
@@ -64,7 +63,7 @@
         <i class="fa-solid fa-arrow-left" id="backm"></i>
         <div class="emailHeader">
             <img src="../assets/MACALINTAL.png" class="senderpfp" style="margin-top:0.5%">
-            <h2>New and improved product: Macalintal Castor Oil Shampoo <br>and Hair Growth Serum</h4>
+            <h2>New and improved product: Macalintal Castor Oil Shampoo <br>and Hair Growth Serum</h2>
             <h4 style="margin-left:6.1%">Macalintal Shampoo and Hair Growth <span class="emailaddress"> (officialmclts&hg@macalintal.com)</span></h5>
         <h4 class="date">Sent: October 10, 2018</h4>
             </div>
@@ -75,7 +74,7 @@
         <i class="fa-solid fa-arrow-left" id="backr"></i>
         <div class="emailHeader">
             <img src="../assets/SMOKE.png" class="senderpfp">
-            <h2>RADLEY: Your favorite FPS game Voralant has a new update!</h4>
+            <h2>RADLEY: Your favorite FPS game Voralant has a new update!</h2>
             <h4>SMOKE<span class="emailaddress"> (noreply.news@smoke.com)</span></h5>
             <h4 class="date">Sent: October 11, 2018</h4>
         </div>
@@ -86,7 +85,7 @@
         <i class="fa-solid fa-arrow-left" id="backw"></i>
         <div class="emailHeader">
             <img src="../assets/bwpfp.png" class="senderpfp">
-            <h2>Regarding Class Attendance</h4>
+            <h2>Regarding Class Attendance</h2>
             <h4>Bheyonsay Windchill<span class="emailaddress"> (bwindchill@epistemeu.edu.gr)</span></h5>
             <h4 class="date">Sent: November 20, 2019</h4>
             </div>
@@ -107,7 +106,7 @@
         <i class="fa-solid fa-arrow-left" id="backs"></i>
         <div class="emailHeader">
             <img src="../assets/vtpfp.png" class="senderpfp">
-            <h2>Termination of Contract</h4>
+            <h2>Termination of Contract</h2>
             <h4>Sherika Denvers<span class="emailaddress"> (sdenvers@humanresources.vulcantech.com)</span></h5>
             <h4 class="date">Sent: January 7, 2019</h4>
             </div>
@@ -127,7 +126,7 @@
         <i class="fa-solid fa-arrow-left" id="backe"></i>
         <div class="emailHeader">
             <img src="../assets/ewpfp.png" class="senderpfp">
-            <h2>50% OFF EVERYTHING: ALL OUT NEW YEAR SALE</h4>
+            <h2>50% OFF EVERYTHING: ALL OUT NEW YEAR SALE</h2>
             <h4>Elizabeth’s Whisper<span class="emailaddress"> (newsletter@elizabethswhispher.com)</span></h5>
             <h4 class="date">Sent: January 1, 2019</h4>
         </div>
@@ -137,10 +136,22 @@
     </div>
     <h3 id="dName">You</h3>
     <div id="dialogue">
-        <h1>Tch, what a useful feature</h1>
+        <h1 id="text"></h1>
+        <p id="temp" style="display:none">Tch...</p>
     </div>
-    <div id="sidebar2"></div>
+    <div id="sidebar2">
+        <button id="back" onclick="window.location.href='../index.html'"><i class="fa-solid fa-e"></i><br><i class="fa-solid fa-x"><br><i class="fa-solid fa-i"></i><br><i class="fa-solid fa-t"></i><br></i></button>
     </div>
+    <div popover id="update">
+            <h1>Update 10.4</h1>
+            <h2>January 24, 2026</h2>
+            <p>Dear Mailer, we are sorry to announce that staring February 1st, Mailer&copy; will permanently cease all operations
+                <br>Because of this, we have disabled key features:</p>
+                    <p>- Creating new emails</p>
+                    <p>- Deleting old emails (emails deleted before disabling will remain in the trash section and will be permanently deleted after one year)</p>
+        </div>
+    </div>
+
     <script src="mail.js"></script>
 </body>
 </html>

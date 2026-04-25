@@ -16,6 +16,17 @@
     from{ opacity:1;}
     to{opacity:0;}
 }
+@font-face{
+    font-family: "pixel";
+    src: url("../assets/LLPIXEL3.ttf");
+}
+@keyframes zoom{
+    from{transform:scale(100%);}
+    to{transform:scale(5000%);}
+}
+@keyframes rotateDisk {
+  100% {transform: rotate(360deg);}
+}
 *{
     box-sizing: border-box;
     margin:0;
@@ -187,10 +198,6 @@ button{
     height:100%;
     pointer-events:none;
 }
-@keyframes zoom{
-    from{transform:scale(100%);}
-    to{transform:scale(5000%);}
-}
 #laptop.reveal.zoom{
     animation: zoom 1.5s ease-in forwards, hideElement 1.5s ease-in forwards;
     animation-delay:2s;
@@ -321,43 +328,50 @@ button{
     padding:2%;  
 }
 #E{
+    display:none;
     grid-row: 4;
     grid-column-end:-1;
 }
 #F{
-    grid-row: 5;
+    grid-row: 7;
     grid-column-end:-1;
 }
 #G{
+    display:none;
     grid-row: 6;
     grid-column-end:-1;
 }
 #H{
+    display:none;
     grid-row: 7;
     grid-column-end:-1;
 }
 #I{
-    grid-row: 5;
-    grid-column-end:-2;
+    grid-row: 6;
+    grid-column-end:-1;
 }
 #J{
+    display:none;
     grid-row: 6;
     grid-column-end:-2;
 }
 #K{
+    display:none;
     grid-row: 7;
     grid-column-end:-2;
 }
 #L{
-    grid-row: 6;
-    grid-column-end:-3;
+    grid-row: 5;
+    grid-column-end:-1;
 }
 #M{
     grid-row: 7;
+    display:none;
     grid-column-end:-3;
 }
 #N{
     grid-row: 7;
+    display:none;
     grid-column-end:-4;
 }
 .smallApp{
@@ -366,6 +380,7 @@ button{
 }
 .smallApp:hover{
     transform:translateY(-10%);
+    cursor:pointer;
 }
 .smallApp img{
     width:85%;
@@ -377,9 +392,6 @@ button{
 .smallApp p{
     font-size:0.75rem;
     text-align:center;
-}
-@keyframes rotateDisk {
-  100% {transform: rotate(360deg);}
 }
 
 /*NOTES FEATURE*/
@@ -474,6 +486,114 @@ form ::placeholder{
     width:100%;
     aspect-ratio:1/1;
 }
+
+/*chat app DISCONTINUED*/
+#chatty{
+    display:none;
+    pointer-events:none;
+    z-index: 1;
+    resize:both;
+    left: 40%;
+    top: 5%;
+    width: 200px;
+    height: 600px;
+    min-height:340px;
+    min-width: 480px;
+    position:absolute;
+    opacity:1;
+    background-color:#FFFFFF;
+    resize: both;
+    border:10px solid pink;
+    font-family:"pixel", sans-serif;
+    color:pink;
+    flex-direction:column;
+}
+#chatheader{
+    background-color:pink;
+    color:white;
+    text-shadow: 2px 2px rgb(253, 120, 142);
+    font-size:2rem;
+    padding:0;
+    height:50px;
+}
+#chatheader img{
+    aspect-ratio:1/1;
+    width:35px;
+}
+#xchat{
+    font-family:"pixel", sans-serif;
+    aspect-ratio:1/1;
+    width:35px;
+    float:right;
+    font-size:1em;
+    background-color:transparent;
+    color:white;
+}
+#blanc,#fam,#bsf{
+    cursor:pointer;
+    border-bottom:2px solid pink;
+    height:3em;
+    width:100%;
+    line-height:1;
+}
+#chatmain{
+    width:100%;
+    height:auto;
+}
+#chatmain div h3{
+    display:block;
+    margin-bottom:0;
+    margin-top:0.1em;
+}
+#chatmain div h2{
+    margin-top:0;
+}
+.chatpfp{
+    height:80%;
+    margin:1%;
+    float:left;
+    aspect-ratio:1/1;
+}
+.newtxtdiv{
+    width:max-content;
+    white-space:nowrap;
+    height:fit-content;
+    margin: 1%;
+}
+.newtxtname{
+    font-size:0.8em;
+    text-align:left;
+    margin-left:1.2em;
+    margin-bottom:0.1em;
+    text-shadow: 1px 1px rgb(253, 120, 142);
+}
+.newtxt{
+    padding:0.5em 1em;
+    border-radius:50px 50px 50px 0px;
+    background-color:aqua;
+    width:fit-content;
+    color:rgb(255, 255, 255);
+    background-color:rgb(253, 120, 142);
+    text-shadow: 1px 1px pink;
+    font-size:1em;
+}
+#typeoptions{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+    height:130px;
+    margin-top:auto;
+    border-top:10px solid pink;
+    padding:0.5em;
+    gap:0.5em;
+}
+#typeoptions button{
+    border-radius:50px;
+    width:95%;
+    height:45%;
+}
+
 /*footer styling*/
     /*-footer button*/
 .toggle-footer{
@@ -521,7 +641,6 @@ form ::placeholder{
     position:absolute;
     bottom:0;
     right:0;
-
 }
 /*-footer content*/
 .footer{  
@@ -656,7 +775,10 @@ form ::placeholder{
     opacity:1;
     transition: opacity linear 0.67s;
 }
-
+#update{
+    position:fixed;
+    margin-right:0px;
+}
 /*mobile*/
 
 @media screen and (max-width: 540px){
