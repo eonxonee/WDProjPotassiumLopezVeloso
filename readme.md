@@ -6,8 +6,8 @@
    * Delete: User can delete new or previous notes by clicking 'Delete' button
      > Updated wireframe: https://www.canva.com/design/DAG3KVnLVYY/T15bPD2_kiuGvoqs9C1Ubw/edit
 ## Other Modifications to be Made:
-   * Add photos/video/file app (will contain subtle clues for puzzles)
-   * Create Settings (allows User to modify interface of Aretta's laptop), Mail (contains fake chats to gather evidence and sends messages to characters), and Trashbin (allows User to recover deleted evidence/clues) apps
+   * Added details based on time
+   * Mail (allows messages to be seen)
    * Fix Background Music settings (allows user to switch between melodies)
 
 ---
@@ -24,7 +24,7 @@
   * The Notes App will use HTML to make the structure which will be a text editor-type popover. JS will also be used to make the notepad work.
   * The Guessing games utilize containers and if-else statements
   * Guess the perpretrator will also use HTML and JS to make a website where users can input a name of who they think the murderer is.
-  * The clock uses JS to constantly get the actual time when the users play. The day counter changes based on the current time (every time the clock displays 19, 38, 57 minutes) and cannot be reset as it will be saved to local storage.
+  * The clock uses JS to constantly get the actual time when the users play. The day counter changes based on the current time (every time the clock displays 30 minutes) and cannot be reset as it will be saved to local storage.
   * JS and CSS will also be used for animations and design
     
 ## Definition of Done: For both of us, our work would be done for the 3rd Quarter if all Notes and Final "Guess the Perpetrator" of our mystery game work, the design is pleasing to look at, and the story is coherent, intriguing, and keeps users playing!
